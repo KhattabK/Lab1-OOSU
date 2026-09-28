@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Models
+namespace BookSwap
 {
     public class Kurs
     {
-        private string Kod;
-        private string Namn;
+        //public för att kunna används av SkrivUt()
+        public string Kod { get; private set; }
+        public string Namn { get; private set; }
 
-        public Kurs (string kod, string namn)
+        public Kurs(string kod, string namn)
         {
-            Kod=kod;
-            Namn=namn;
+            Kod = kod;
+            Namn = namn;
         }
     }
 }

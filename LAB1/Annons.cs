@@ -1,40 +1,60 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Models
+namespace BookSwap
 {
-    public class Annons //bör troligtvis ändras till abstract class
+    public abstract class Annons
     {
-        public string Titel { get; private set; }
-        private decimal Pris;
-        private string Skick;
+        //de har satts till protected för att kunna användas av SkrivUt() i subklasserna
+        protected string Titel { get; private set; }
+        protected decimal Pris { get; private set; }
+
+        protected Skick Skick { get; private set; }
+        protected Kurs Kurs { get; private set; }
+
+        //private för att de ej är nödvändiga i SkrivUt()
         private DateTime Publiceringsdatum;
-        public string Status { get; private set; } // bör kanske göras till en enum
-
         private Student Säljare;
-        private Kurs Kurs;
 
-        public Annons(string titel, decimal pris, string skick,  DateTime publiceringsdatum, string status, Student säljare, Kurs kurs)
+        //public eftersom den används i andra klasser
+        public Status Status { get; private set; }
+
+        public Annons(string titel, decimal pris, Skick skick, DateTime publiceringsdatum, Status status, Student säljare, Kurs kurs)
         {
-            Titel=titel;
-            Pris=pris;
-            Skick=skick;
-            Publiceringsdatum=publiceringsdatum;
-            Status=status; // bör kanske göras till en enum
+            Titel = titel;
+            Pris = pris;
+            Skick = skick;
+            Publiceringsdatum = publiceringsdatum;
+            Status = status;
             Säljare = säljare;
-            Kurs= kurs;
+            Kurs = kurs;
 
         }
 
-        public void Reservera(Student köpare)
+        public bool Reservera(Student köpare)
         {
-            //Metod som sätter annonsens status till "Reserverad" & kopplar annonsen till studenten (köparen)
-            Status = "Reserverad";
-            //lägger till den "markerade" annonsen
-            köpare.ReserveradeAnnonser.Add(this); 
+            //kontrollerar att statusen verkligen är TillSalu och returnerar antingen true eller false
+            if (Status != Status.TillSalu)
+            {
+                return false;
+            }
+
+            //Sätter annonsens status till "Reserverad"
+            Status = Status.Reserverad;
+
+            //lägger till den "valda" annonsen i köparens "Reserverad" lista
+            köpare.LäggTillReserveradAnnons(this);
+
+            return true;
         }
 
-       
+        public virtual string SkrivUt()
+        {
+            return $"{Titel} - {Pris} kr - Skick: {Skick} - Kurs: {Kurs.Namn}";
+        }
+
+
     }
 }
