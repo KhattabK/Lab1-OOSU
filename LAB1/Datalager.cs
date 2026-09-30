@@ -1,6 +1,4 @@
-﻿
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -11,6 +9,7 @@ namespace BookSwap
         public List<Student> Studenter { get; private set; }
         public List<Annons> Annonser { get; private set; }
         public List<Kurs> Kurser { get; private set; }
+        public List<Affär> Affärer { get; private set; }
 
         public Datalager()
         {
@@ -19,6 +18,7 @@ namespace BookSwap
             Studenter = new List<Student>();
             Annonser = new List<Annons>();
             Kurser = new List<Kurs>();
+            Affärer = new List<Affär>();
 
 
             Student student1 = new Student(
@@ -101,6 +101,12 @@ namespace BookSwap
         public List<Annons> HämtaAnnonser()
         {
             return Annonser;
+        }
+
+        //Lägger till en ny affär i Affärer listan.
+        public void LäggTillAffär(Affär affär)
+        {
+            Affärer.Add(affär);
         }
 
 

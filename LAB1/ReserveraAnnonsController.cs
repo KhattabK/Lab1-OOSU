@@ -1,6 +1,4 @@
-﻿
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -20,9 +18,18 @@ namespace BookSwap
 
         //Metod som reserverar annonsen genom att anropa Reservera() och skicka med köparen
         // returnerar antingen true eller false, true om reserveringen lyckades och annars false
+        //Om reserveringen lyckas skapas en Affär som sparas i Datalager
         public bool ReserveraAnnons(Annons annons, Student köpare)
         {
-            return annons.Reservera(köpare);
+            bool lyckades = annons.Reservera(köpare);
+
+            if (lyckades)
+            {
+                Affär affär = new Affär(köpare, annons.Säljare, annons, DateTime.Now);
+                Datalager.LäggTillAffär(affär);
+            }
+
+            return lyckades;
         }
 
         //Skapar en lista med endast annonser med status "TillSalu" och returnerar den

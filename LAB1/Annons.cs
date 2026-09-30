@@ -16,7 +16,7 @@ namespace BookSwap
 
         //private för att de ej är nödvändiga i SkrivUt()
         private DateTime Publiceringsdatum;
-        private Student Säljare;
+        public Student Säljare { get; private set; }
 
         //public eftersom den används i andra klasser
         public Status Status { get; private set; }

@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Bookswap
+namespace BookSwap
 {
     
     internal class Program
