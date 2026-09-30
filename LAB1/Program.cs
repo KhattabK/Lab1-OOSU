@@ -1,10 +1,9 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace BookSwap
 {
-    
+
     internal class Program
     {
 
@@ -69,8 +68,13 @@ namespace BookSwap
                         Console.Write("Ange siffran för den annons du vill reservera: ");
                         Console.WriteLine();
 
-                        // saknas felhantering som kontrollerar att det är en siffra + att numret faktiskt finns i listan
-                        int input = int.Parse(Console.ReadLine());
+                        // kontrollerar att inmatningen är en siffra och att numret finns i listan
+                        if (!int.TryParse(Console.ReadLine(), out int input) || input < 1 || input > tillgängligaAnnonser.Count)
+                        {
+                            Console.WriteLine("Ogiltigt val.");
+                            Console.ReadKey();
+                            break;
+                        }
 
                         Annons valdAnnons = tillgängligaAnnonser[input - 1];
 
