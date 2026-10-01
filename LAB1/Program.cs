@@ -6,6 +6,9 @@ namespace BookSwap
 
     internal class Program
     {
+        static Student inloggadStudent;
+        static ReserveraAnnonsController controller;
+
 
         //metod som skriver ut alla annonser som finns i listan
         // används för att inte behöva upprepa samma kod i case 1 och case 2
@@ -23,10 +26,10 @@ namespace BookSwap
         {
 
             Datalager datalager = new Datalager();
-            ReserveraAnnonsController controller = new ReserveraAnnonsController(datalager);
+            controller = new ReserveraAnnonsController(datalager);
 
 
-            Student inloggadStudent = datalager.Studenter[2];
+            inloggadStudent = datalager.Studenter[2];
 
             bool kör = true;
 
@@ -48,47 +51,11 @@ namespace BookSwap
                 {
 
                     case "1":
-                        // visar alla tillgängliga annonser
-                        Console.Clear();
-                        Console.WriteLine("Tillgängliga Annonser: ");
-
-                        List<Annons> tillgängliga = controller.ListaTillgängligaAnnonser();
-                        VisaAnnonser(tillgängliga);
-                        Console.ReadKey();
-
+                        VisaTillgängligaAnnonser();
                         break;
 
                     case "2":
-                        // visar alla tillgängliga annonser och läser in input (användarens val)
-                        Console.Clear();
-                        List<Annons> tillgängligaAnnonser = controller.ListaTillgängligaAnnonser();
-                        Console.WriteLine("---Välj Annons---");
-                        VisaAnnonser(tillgängligaAnnonser);
-                        Console.WriteLine();
-                        Console.Write("Ange siffran för den annons du vill reservera: ");
-                        Console.WriteLine();
-
-                        // kontrollerar att inmatningen är en siffra och att numret finns i listan
-                        if (!int.TryParse(Console.ReadLine(), out int input) || input < 1 || input > tillgängligaAnnonser.Count)
-                        {
-                            Console.WriteLine("Ogiltigt val.");
-                            Console.ReadKey();
-                            break;
-                        }
-
-                        Annons valdAnnons = tillgängligaAnnonser[input - 1];
-
-                        bool lyckadReservation = controller.ReserveraAnnons(valdAnnons, inloggadStudent);
-
-                        if (lyckadReservation)
-                        {
-                            Console.WriteLine("Annonsen är reserverad.");
-                        }
-                        else
-                        {
-                            Console.WriteLine("Annonsen kunde inte reserveras.");
-                        }
-                        Console.ReadKey();
+                        AnnonsReservation();
                         break;
 
                     case "0":
@@ -106,6 +73,53 @@ namespace BookSwap
 
             }
         }
+        static void VisaTillgängligaAnnonser()
+        {
+            // visar alla tillgängliga annonser
+            Console.Clear();
+            Console.WriteLine("Tillgängliga Annonser: ");
+
+            List<Annons> tillgängliga = controller.ListaTillgängligaAnnonser();
+            VisaAnnonser(tillgängliga);
+            Console.ReadKey();
+        }
+
+        static void AnnonsReservation()
+        {
+            // visar alla tillgängliga annonser och läser in input (användarens val)
+            Console.Clear();
+            List<Annons> tillgängligaAnnonser = controller.ListaTillgängligaAnnonser();
+            Console.WriteLine("---Välj Annons---");
+            VisaAnnonser(tillgängligaAnnonser);
+            Console.WriteLine();
+            Console.Write("Ange siffran för den annons du vill reservera: ");
+            Console.WriteLine();
+
+            // kontrollerar att inmatningen är en siffra och att numret finns i listan
+            if (!int.TryParse(Console.ReadLine(), out int input) || input < 1 || input > tillgängligaAnnonser.Count)
+            {
+                Console.WriteLine("Ogiltigt val.");
+                Console.ReadKey();
+                return;
+            }
+
+            Annons valdAnnons = tillgängligaAnnonser[input - 1];
+
+
+            // true eller false returneras beroende på om reservationen lyckas, används för att skriva ut meddelande
+            bool lyckadReservation = controller.ReserveraAnnons(valdAnnons, inloggadStudent);
+
+            if (lyckadReservation)
+            {
+                Console.WriteLine("Annonsen är reserverad.");
+            }
+            else
+            {
+                Console.WriteLine("Annonsen kunde inte reserveras.");
+            }
+            Console.ReadKey();
+        }
+
     }
 
 }
