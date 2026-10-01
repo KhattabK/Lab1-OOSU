@@ -45,30 +45,32 @@ namespace BookSwap
                 Console.Write("Välj ett alternativ: ");
 
 
-                string val = Console.ReadLine();
-
-                switch (val)
+                if (int.TryParse(Console.ReadLine(), out int val))
                 {
 
-                    case "1":
-                        VisaTillgängligaAnnonser();
-                        break;
+                    switch (val)
+                    {
 
-                    case "2":
-                        AnnonsReservation();
-                        break;
+                        case 1:
+                            VisaTillgängligaAnnonser();
+                            break;
 
-                    case "0":
-                        // avslutar programmet
-                        Console.WriteLine("Avslutar");
-                        kör = false;
-                        Console.ReadKey();
-                        break;
+                        case 2:
+                            AnnonsReservation();
+                            break;
 
-                    default:
-                        Console.WriteLine("Ogiltigt val. Välj 1, 2 eller 0.");
-                        Console.ReadKey();
-                        break;
+                        case 3:
+                            // avslutar programmet
+                            Console.WriteLine("Avslutar");
+                            kör = false;
+                            Console.ReadKey();
+                            break;
+
+                        default:
+                            Console.WriteLine("Ogiltigt val. Välj 1, 2 eller 0.");
+                            Console.ReadKey();
+                            break;
+                    }
                 }
 
             }
