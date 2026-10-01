@@ -44,8 +44,7 @@ namespace BookSwap
             //Sätter annonsens status till "Reserverad"
             Status = Status.Reserverad;
 
-            //lägger till den "valda" annonsen i köparens "Reserverad" lista
-            köpare.LäggTillReserveradAnnons(this);
+      
 
             return true;
         }
