@@ -39,7 +39,7 @@ namespace BookSwap
                 Console.WriteLine("---Meny----");
                 Console.WriteLine("1. Visa Tillgängliga annonser");
                 Console.WriteLine("2. Reservera annons");
-                Console.WriteLine("0. Avsluta");
+                Console.WriteLine("3. Avsluta");
                 Console.WriteLine();
 
                 Console.Write("Välj ett alternativ: ");
@@ -67,7 +67,7 @@ namespace BookSwap
                             break;
 
                         default:
-                            Console.WriteLine("Ogiltigt val. Välj 1, 2 eller 0.");
+                            Console.WriteLine("Ogiltigt val. Välj 1, 2 eller 3.");
                             Console.ReadKey();
                             break;
                     }
