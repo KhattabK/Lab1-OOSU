@@ -36,6 +36,10 @@ namespace BookSwap
         public bool Reservera(Student köpare)
         {
             //kontrollerar att statusen verkligen är TillSalu och returnerar antingen true eller false
+            if(Säljare==köpare)
+            {
+                return false;
+            }
             if (Status != Status.TillSalu)
             {
                 return false;
@@ -51,7 +55,7 @@ namespace BookSwap
 
         public virtual string SkrivUt()
         {
-            return $"{Titel} - {Pris} kr - Skick: {Skick} - Kurs: {Kurs.Namn}";
+            return $"{Titel} - {Pris} kr - Skick: {Skick} ";
         }
 
 

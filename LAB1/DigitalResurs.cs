@@ -20,7 +20,7 @@ namespace BookSwap
 
         public override string SkrivUt()
         {
-            return $"{Titel} - {Pris} kr - Skick: {Skick} - Kurs: {Kurs.Namn} - Filformat: {Filformat} - Leveranssätt: {Filformat}";
+            return $"{Titel} - {Pris} kr - Skick: {Skick} - Kurs: {Kurs.Namn} - Filformat: {Filformat}";
         }
     }
 }

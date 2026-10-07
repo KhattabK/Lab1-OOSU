@@ -21,7 +21,7 @@ namespace BookSwap
 
         public override string SkrivUt()
         {
-            return $"{Titel} - {Pris} kr - Skick: {Skick} Kurs: {Kurs.Namn} - Författare: {Författare} - Upplaga: {Upplaga} - ISBN: {ISBN}";
+            return $"{Titel} - {Pris} kr - Skick: {Skick} Kurs: {Kurs.Namn} - Författare: {Författare}";
         }
     }
 }

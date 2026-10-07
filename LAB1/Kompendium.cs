@@ -20,7 +20,7 @@ namespace BookSwap
         }
         public override string SkrivUt()
         {
-            return $"{Titel} - {Pris} kr - Skick: {Skick}  - Antal sidor: {AntalSidor} - Utgivnings år: {UtgivningsÅr}";
+            return $"{Titel} - {Pris} kr - Skick: {Skick}  - Antal sidor: {AntalSidor}";
         }
     }
 }
