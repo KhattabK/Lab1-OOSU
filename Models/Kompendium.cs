@@ -5,7 +5,7 @@ using System.Net.NetworkInformation;
 using System.Reflection.Metadata;
 using System.Text;
 
-namespace BookSwap
+namespace Models
 {
     public class Kompendium : Annons
     {
@@ -20,7 +20,7 @@ namespace BookSwap
         }
         public override string SkrivUt()
         {
-            return $"{Titel} - {Pris} kr - Skick: {Skick}  - Antal sidor: {AntalSidor}";
+            return $"ID {Id}: {Titel} - {Pris} kr - Skick: {Skick}  - Antal sidor: {AntalSidor}";
         }
     }
 }

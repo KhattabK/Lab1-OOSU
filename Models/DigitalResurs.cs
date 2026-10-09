@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 
-namespace BookSwap
+namespace Models
 {
     public class DigitalResurs : Annons
     {
@@ -20,7 +20,7 @@ namespace BookSwap
 
         public override string SkrivUt()
         {
-            return $"{Titel} - {Pris} kr - Skick: {Skick} - Kurs: {Kurs.Namn} - Filformat: {Filformat}";
+            return $"ID {Id}: {Titel} - {Pris} kr - Skick: {Skick} - Kurs: {Kurs.Namn} - Filformat: {Filformat}";
         }
     }
 }

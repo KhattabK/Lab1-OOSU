@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BookSwap
+namespace Models
 {
     public class Affär
     {

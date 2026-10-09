@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BookSwap
+namespace Models
 {
     public class Kursbok : Annons
     {
@@ -21,7 +21,7 @@ namespace BookSwap
 
         public override string SkrivUt()
         {
-            return $"{Titel} - {Pris} kr - Skick: {Skick} Kurs: {Kurs.Namn} - Författare: {Författare}";
+            return $"ID {Id}: {Titel} - {Pris} kr - Skick: {Skick} Kurs: {Kurs.Namn} - Författare: {Författare}";
         }
     }
 }

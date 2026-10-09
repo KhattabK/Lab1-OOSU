@@ -3,10 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BookSwap
+namespace Models
 {
     public abstract class Annons
     {
+        private static int nästaId = 1;
+        public int Id { get; private set; }
         //de har satts till protected för att kunna användas av SkrivUt() i subklasserna
         protected string Titel { get; private set; }
         protected decimal Pris { get; private set; }
@@ -23,6 +25,7 @@ namespace BookSwap
 
         public Annons(string titel, decimal pris, Skick skick, DateTime publiceringsdatum, Status status, Student säljare, Kurs kurs)
         {
+            Id = nästaId++;
             Titel = titel;
             Pris = pris;
             Skick = skick;

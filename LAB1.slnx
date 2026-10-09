@@ -1,3 +1,6 @@
 <Solution>
+  <Project Path="GUI/GUI.csproj" Id="53a80aa8-2f68-4d00-b449-6f71d5197ea3" />
   <Project Path="LAB1/BookSwap.csproj" />
+  <Project Path="Models/Models.csproj" Id="cb6f0fdb-b61e-42fc-ba5e-11e23767c9d7" />
+  <Project Path="Servicelager/Servicelager.csproj" Id="8fe39cdc-557c-4d3f-9091-b3f898197157" />
 </Solution>

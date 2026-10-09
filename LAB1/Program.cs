@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Models;
+using Servicelager;
 
 namespace BookSwap
 {
@@ -15,11 +17,9 @@ namespace BookSwap
         // kanske borde flyttas någon annanstans
         static void VisaAnnonser(List<Annons> annonser)
         {
-            int nummer = 1;
             foreach (Annons annons in annonser)
             {
-                Console.WriteLine(nummer + "." + annons.SkrivUt());
-                nummer = nummer + 1;
+                Console.WriteLine(annons.SkrivUt());
             }
         }
         static void Main(string[] args)
@@ -78,10 +78,11 @@ namespace BookSwap
         static void VisaTillgängligaAnnonser()
         {
             // visar alla tillgängliga annonser
-            Console.Clear();
+          
             Console.WriteLine("Tillgängliga Annonser: ");
 
             List<Annons> tillgängliga = controller.ListaTillgängligaAnnonser();
+          
             VisaAnnonser(tillgängliga);
             Console.ReadKey();
         }
@@ -94,18 +95,34 @@ namespace BookSwap
             Console.WriteLine("---Välj Annons---");
             VisaAnnonser(tillgängligaAnnonser);
             Console.WriteLine();
-            Console.Write("Ange siffran för den annons du vill reservera: ");
+            Console.Write("Ange ID för den annons du vill reservera: ");
             Console.WriteLine();
 
-            // kontrollerar att inmatningen är en siffra och att numret finns i listan
-            if (!int.TryParse(Console.ReadLine(), out int input) || input < 1 || input > tillgängligaAnnonser.Count)
+            // kontrollerar att inmatningen är en siffra 
+            if (!int.TryParse(Console.ReadLine(), out int input))
             {
                 Console.WriteLine("Ogiltigt val.");
                 Console.ReadKey();
                 return;
             }
 
-            Annons valdAnnons = tillgängligaAnnonser[input - 1];
+            Annons valdAnnons = null;
+            // hämtar annons
+            foreach (Annons annons in tillgängligaAnnonser)
+            {
+                if (annons.Id == input)
+                {
+                    valdAnnons = annons;
+                    break;
+                }
+            }
+
+            if (valdAnnons == null)
+            {
+                Console.WriteLine("Det finns ingen tillgänglig annons med detta ID.");
+                Console.ReadKey();
+                return;
+            }
 
 
             // true eller false returneras beroende på om reservationen lyckas, används för att skriva ut meddelande
