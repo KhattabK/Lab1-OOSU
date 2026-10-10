@@ -14,7 +14,7 @@ namespace Models
         protected decimal Pris { get; private set; }
 
         protected Skick Skick { get; private set; }
-        protected Kurs Kurs { get; private set; }
+        public Kurs Kurs { get; private set; }
 
         //private för att de ej är nödvändiga i SkrivUt()
         private DateTime Publiceringsdatum;
@@ -33,6 +33,7 @@ namespace Models
             Status = status;
             Säljare = säljare;
             Kurs = kurs;
+            säljare.LäggTillAnnons(this);
 
         }
 
@@ -53,6 +54,16 @@ namespace Models
 
       
 
+            return true;
+        }
+
+        public bool BekräftaKöp()
+        {
+            if (Status != Status.Reserverad)
+            {
+                return false;
+            }
+            Status = Status.Såld;
             return true;
         }
 

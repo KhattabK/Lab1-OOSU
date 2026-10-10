@@ -2,61 +2,43 @@
 using System.Collections.Generic;
 using System.Text;
 using Models;
+
 namespace Servicelager
 {
     public class Datalager
     {
         public List<Student> Studenter { get; private set; }
+        public List<Administratör> Administratörer { get; private set; }
         public List<Annons> Annonser { get; private set; }
         public List<Kurs> Kurser { get; private set; }
         public List<Affär> Affärer { get; private set; }
 
         public Datalager()
         {
-
-            //Exempeldata
             Studenter = new List<Student>();
+            Administratörer = new List<Administratör>();
             Annonser = new List<Annons>();
             Kurser = new List<Kurs>();
             Affärer = new List<Affär>();
 
-
-            Student student1 = new Student(
-                "Anna",
-                "Andersson",
-                "anna@mail.com",
-                "0701234567"
-            );
-
-            Student student2 = new Student(
-                "Erik",
-                "Eriksson",
-                "erik@mail.com",
-                "0707654321"
-            );
-
-            Student student3 = new Student(
-                "Lisa",
-                "Jonsson",
-                "lisa@mail.com",
-                "0724567890"
-             );
+            // Exempeldata: studenter (användarnamn, lösenord, förnamn, efternamn, epost, telefon)
+            Student student1 = new Student("anna", "anna123", "Anna", "Andersson", "anna@mail.com", "0701234567");
+            Student student2 = new Student("erik", "erik123", "Erik", "Eriksson", "erik@mail.com", "0707654321");
+            Student student3 = new Student("lisa", "lisa123", "Lisa", "Jonsson", "lisa@mail.com", "0724567890");
 
             Studenter.Add(student1);
             Studenter.Add(student2);
             Studenter.Add(student3);
 
+            // Exempeldata: administratör
+            Administratör admin1 = new Administratör("admin", "admin123", "Sara", "Svensson", "admin@bookswap.se");
+            Administratörer.Add(admin1);
 
-
-            Kurs kurs1 = new Kurs(
-                "DA1234",
-                "Objektorienterad programmering"
-            );
-
+            // Exempeldata: kurser
+            Kurs kurs1 = new Kurs("DA1234", "Objektorienterad programmering");
             Kurser.Add(kurs1);
 
-
-
+            // Exempeldata: annonser
             Annons annons1 = new Kursbok(
                 "Bok1",
                 120,
@@ -89,26 +71,23 @@ namespace Servicelager
                 student1,
                 kurs1,
                 120,
-                2025
-                );
+                2025);
 
             Annonser.Add(annons1);
             Annonser.Add(annons2);
             Annonser.Add(annons3);
         }
 
-        //Hämtar och returnerar samtliga annonser i Annonser listan. 
+        // Hämtar och returnerar samtliga annonser i Annonser-listan
         public List<Annons> HämtaAnnonser()
         {
             return Annonser;
         }
 
-        //Lägger till en ny affär i Affärer listan.
+        // Lägger till en ny affär i Affärer-listan
         public void LäggTillAffär(Affär affär)
         {
             Affärer.Add(affär);
         }
-
-
     }
 }

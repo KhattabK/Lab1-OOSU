@@ -15,5 +15,11 @@ namespace Models
             Kod = kod;
             Namn = namn;
         }
+
+        public void Ändra(string kod, string namn)
+        {
+            Kod = kod;
+            Namn = namn;
+        }
     }
 }
