@@ -7,6 +7,9 @@
         {
         }
 
-        public override string Roll => "Administratör";
+        public override string Presentera()
+        {
+            return $"Administratör: {Förnamn} {Efternamn}";
+        }
     }
 }

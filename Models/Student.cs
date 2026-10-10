@@ -3,30 +3,31 @@
     public class Student : Användare
     {
         public string Telefonnummer { get; private set; }
-
-        // Studentens egna annonser (krav i verksamhetsbeskrivningen)
-        private List<Annons> minaAnnonser = new List<Annons>();
-        public IReadOnlyList<Annons> MinaAnnonser => minaAnnonser;
+        public List<Annons> MinaAnnonser { get; private set; }
 
         public Student(string användarnamn, string lösenord, string förnamn, string efternamn, string epost, string telefonnummer)
             : base(användarnamn, lösenord, förnamn, efternamn, epost)
         {
             Telefonnummer = telefonnummer;
+            MinaAnnonser = new List<Annons>();
         }
 
-        public override string Roll => "Student";
+        public override string Presentera()
+        {
+            return $"Student: {Förnamn} {Efternamn}";
+        }
 
         public void LäggTillAnnons(Annons annons)
         {
-            if (!minaAnnonser.Contains(annons))
+            if (!MinaAnnonser.Contains(annons))
             {
-                minaAnnonser.Add(annons);
+                MinaAnnonser.Add(annons);
             }
         }
 
         public void TaBortAnnons(Annons annons)
         {
-            minaAnnonser.Remove(annons);
+            MinaAnnonser.Remove(annons);
         }
     }
 }
