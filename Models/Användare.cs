@@ -8,7 +8,7 @@
         public string Efternamn { get; private set; }
         public string Epost { get; private set; }
 
-        protected Användare(string användarnamn, string lösenord, string förnamn, string efternamn, string epost)
+        public Användare(string användarnamn, string lösenord, string förnamn, string efternamn, string epost)
         {
             Användarnamn = användarnamn;
             Lösenord = lösenord;
@@ -17,15 +17,13 @@
             Epost = epost;
         }
 
-        // Lösenordet lämnas aldrig ut, det kan bara kontrolleras
+        // Lösenordet kan bara kontrolleras, aldrig läsas utifrån
         public bool KontrolleraLösenord(string lösenord)
         {
             return Lösenord == lösenord;
         }
 
-        public string FullständigtNamn => $"{Förnamn} {Efternamn}";
-
-        // Abstrakt: varje subklass måste själv ange sin roll (polymorfism)
-        public abstract string Roll { get; }
+        // Varje subklass presenterar sig på sitt eget sätt
+        public abstract string Presentera();
     }
 }

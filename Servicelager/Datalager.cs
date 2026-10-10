@@ -89,5 +89,11 @@ namespace Servicelager
         {
             Affärer.Add(affär);
         }
+
+        // Lägger till en ny student i Studenter-listan
+        public void LäggTillStudent(Student student)
+        {
+            Studenter.Add(student);
+        }
     }
 }
