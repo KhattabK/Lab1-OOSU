@@ -95,5 +95,30 @@ namespace Servicelager
         {
             Studenter.Add(student);
         }
+
+        // Lägger till en ny annons i Annonser-listan
+        public void LäggTillAnnons(Annons annons)
+        {
+            Annonser.Add(annons);
+        }
+
+        // Tar bort en annons, både från Annonser-listan och från säljarens egna annonser
+        public void TaBortAnnons(Annons annons)
+        {
+            Annonser.Remove(annons);
+            annons.Säljare.TaBortAnnons(annons);
+        }
+
+        // Lägger till en ny kurs i Kurser-listan
+        public void LäggTillKurs(Kurs kurs)
+        {
+            Kurser.Add(kurs);
+        }
+
+        // Tar bort en kurs från Kurser-listan
+        public void TaBortKurs(Kurs kurs)
+        {
+            Kurser.Remove(kurs);
+        }
     }
 }
