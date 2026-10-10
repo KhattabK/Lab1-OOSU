@@ -18,5 +18,10 @@ namespace Models
             Reservationsdatum = reservationsdatum;
             Status = AffärStatus.Reserverad;
         }
+
+        public void Genomför()
+        {
+            Status = AffärStatus.Genomförd;
+        }
     }
 }
