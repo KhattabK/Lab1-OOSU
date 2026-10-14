@@ -109,6 +109,20 @@ namespace Servicelager
             annons.Säljare.TaBortAnnons(annons);
         }
 
+        //hämtar en annons enligt annonsID
+        public Annons HämtaAnnons(int annonsId)
+        {
+            foreach (Annons annons in Annonser)
+            {
+                if (annons.Id == annonsId)
+                {
+                    return annons;
+                }
+            }
+
+            return null;
+        }
+
         // Lägger till en ny kurs i Kurser-listan
         public void LäggTillKurs(Kurs kurs)
         {
