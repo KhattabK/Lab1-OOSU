@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class SkapaAnnons
+    partial class SkapaAnnonsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -38,7 +38,6 @@
             lblAnnonsKurs = new Label();
             txtTitelInput = new TextBox();
             lblAnnonsTitel = new Label();
-            lblGemensammaUppgifter = new Label();
             lblVäljAnnonsTyp = new Label();
             panelKursbok = new Panel();
             lblUpplaga = new Label();
@@ -48,7 +47,6 @@
             lblKursbok = new Label();
             txtUpplagaInput = new TextBox();
             txtISBNInput = new TextBox();
-            lblSkapaAnnonsRubrik = new Label();
             btnSkapaAnnons = new Button();
             btnAvbryt = new Button();
             panelKompendium = new Panel();
@@ -63,6 +61,7 @@
             lblLeveranssätt = new Label();
             lblFilformat = new Label();
             lblDigitalResurs = new Label();
+            lblSkapaAnnonsRubrik = new Label();
             panelAnnonsGemensammaUppgifter.SuspendLayout();
             panelKursbok.SuspendLayout();
             panelKompendium.SuspendLayout();
@@ -90,7 +89,6 @@
             panelAnnonsGemensammaUppgifter.Controls.Add(lblAnnonsKurs);
             panelAnnonsGemensammaUppgifter.Controls.Add(txtTitelInput);
             panelAnnonsGemensammaUppgifter.Controls.Add(lblAnnonsTitel);
-            panelAnnonsGemensammaUppgifter.Controls.Add(lblGemensammaUppgifter);
             panelAnnonsGemensammaUppgifter.Controls.Add(lblVäljAnnonsTyp);
             panelAnnonsGemensammaUppgifter.Controls.Add(cmbAnnonsTyp);
             panelAnnonsGemensammaUppgifter.Location = new Point(8, 52);
@@ -166,16 +164,6 @@
             lblAnnonsTitel.Size = new Size(38, 20);
             lblAnnonsTitel.TabIndex = 8;
             lblAnnonsTitel.Text = "Titel";
-            // 
-            // lblGemensammaUppgifter
-            // 
-            lblGemensammaUppgifter.AutoSize = true;
-            lblGemensammaUppgifter.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblGemensammaUppgifter.Location = new Point(247, 17);
-            lblGemensammaUppgifter.Name = "lblGemensammaUppgifter";
-            lblGemensammaUppgifter.Size = new Size(214, 25);
-            lblGemensammaUppgifter.TabIndex = 9;
-            lblGemensammaUppgifter.Text = "Gemensamma uppgifter";
             // 
             // lblVäljAnnonsTyp
             // 
@@ -257,16 +245,6 @@
             txtISBNInput.Name = "txtISBNInput";
             txtISBNInput.Size = new Size(191, 27);
             txtISBNInput.TabIndex = 1;
-            // 
-            // lblSkapaAnnonsRubrik
-            // 
-            lblSkapaAnnonsRubrik.AutoSize = true;
-            lblSkapaAnnonsRubrik.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblSkapaAnnonsRubrik.Location = new Point(12, 9);
-            lblSkapaAnnonsRubrik.Name = "lblSkapaAnnonsRubrik";
-            lblSkapaAnnonsRubrik.Size = new Size(126, 25);
-            lblSkapaAnnonsRubrik.TabIndex = 8;
-            lblSkapaAnnonsRubrik.Text = "Skapa annons";
             // 
             // btnSkapaAnnons
             // 
@@ -396,16 +374,26 @@
             lblDigitalResurs.TabIndex = 16;
             lblDigitalResurs.Text = "Digital resurs";
             // 
+            // lblSkapaAnnonsRubrik
+            // 
+            lblSkapaAnnonsRubrik.AutoSize = true;
+            lblSkapaAnnonsRubrik.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSkapaAnnonsRubrik.Location = new Point(291, 9);
+            lblSkapaAnnonsRubrik.Name = "lblSkapaAnnonsRubrik";
+            lblSkapaAnnonsRubrik.Size = new Size(158, 31);
+            lblSkapaAnnonsRubrik.TabIndex = 16;
+            lblSkapaAnnonsRubrik.Text = "Skapa annons";
+            // 
             // SkapaAnnons
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblSkapaAnnonsRubrik);
             Controls.Add(panelDigitalResurs);
             Controls.Add(panelKompendium);
             Controls.Add(btnAvbryt);
             Controls.Add(btnSkapaAnnons);
-            Controls.Add(lblSkapaAnnonsRubrik);
             Controls.Add(panelKursbok);
             Controls.Add(panelAnnonsGemensammaUppgifter);
             Name = "SkapaAnnons";
@@ -434,12 +422,10 @@
         private Label lblISBN;
         private TextBox txtFörfattareInput;
         private Label lblFörfattare;
-        private Label lblSkapaAnnonsRubrik;
         private Label lblVäljAnnonsTyp;
         private Label lblAnnonsKurs;
         private TextBox txtTitelInput;
         private Label lblAnnonsTitel;
-        private Label lblGemensammaUppgifter;
         private Label lblAnnonsSkick;
         private Label label1;
         private TextBox txtPrisInput;
@@ -459,5 +445,6 @@
         private Label lblLeveranssätt;
         private Label lblFilformat;
         private Label lblDigitalResurs;
+        private Label lblSkapaAnnonsRubrik;
     }
 }

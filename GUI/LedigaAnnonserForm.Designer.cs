@@ -38,15 +38,22 @@
             colTyp = new DataGridViewTextBoxColumn();
             btnAvbryt = new Button();
             btnReserveraAnnons = new Button();
+            lblDetaljVyInformation = new Label();
+            btnVisaDetaljer = new Button();
+            panelDetaljVy = new Panel();
+            lblDetaljVy = new Label();
+            btnStängDetaljVy = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewLedigaAnnonser).BeginInit();
+            panelDetaljVy.SuspendLayout();
             SuspendLayout();
             // 
             // lblTitel
             // 
             lblTitel.AutoSize = true;
-            lblTitel.Location = new Point(26, 32);
+            lblTitel.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitel.Location = new Point(67, 21);
             lblTitel.Name = "lblTitel";
-            lblTitel.Size = new Size(145, 20);
+            lblTitel.Size = new Size(227, 31);
             lblTitel.TabIndex = 0;
             lblTitel.Text = "Tillgänliga Annonser";
             // 
@@ -116,7 +123,7 @@
             // btnAvbryt
             // 
             btnAvbryt.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnAvbryt.Location = new Point(428, 399);
+            btnAvbryt.Location = new Point(209, 399);
             btnAvbryt.Name = "btnAvbryt";
             btnAvbryt.Size = new Size(94, 41);
             btnAvbryt.TabIndex = 2;
@@ -135,11 +142,63 @@
             btnReserveraAnnons.UseVisualStyleBackColor = true;
             btnReserveraAnnons.Click += btnReserveraAnnons_Click;
             // 
+            // lblDetaljVyInformation
+            // 
+            lblDetaljVyInformation.AutoSize = true;
+            lblDetaljVyInformation.Location = new Point(27, 53);
+            lblDetaljVyInformation.Name = "lblDetaljVyInformation";
+            lblDetaljVyInformation.Size = new Size(50, 20);
+            lblDetaljVyInformation.TabIndex = 0;
+            lblDetaljVyInformation.Text = "label1";
+            // 
+            // btnVisaDetaljer
+            // 
+            btnVisaDetaljer.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnVisaDetaljer.Location = new Point(334, 399);
+            btnVisaDetaljer.Name = "btnVisaDetaljer";
+            btnVisaDetaljer.Size = new Size(193, 41);
+            btnVisaDetaljer.TabIndex = 5;
+            btnVisaDetaljer.Text = "Visa detaljer";
+            btnVisaDetaljer.UseVisualStyleBackColor = true;
+            btnVisaDetaljer.Click += btnVisaDetaljer_Click;
+            // 
+            // panelDetaljVy
+            // 
+            panelDetaljVy.Controls.Add(btnStängDetaljVy);
+            panelDetaljVy.Controls.Add(lblDetaljVy);
+            panelDetaljVy.Controls.Add(lblDetaljVyInformation);
+            panelDetaljVy.Location = new Point(438, 21);
+            panelDetaljVy.Name = "panelDetaljVy";
+            panelDetaljVy.Size = new Size(350, 366);
+            panelDetaljVy.TabIndex = 6;
+            // 
+            // lblDetaljVy
+            // 
+            lblDetaljVy.AutoSize = true;
+            lblDetaljVy.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDetaljVy.Location = new Point(18, 13);
+            lblDetaljVy.Name = "lblDetaljVy";
+            lblDetaljVy.Size = new Size(84, 28);
+            lblDetaljVy.TabIndex = 1;
+            lblDetaljVy.Text = "Detaljvy";
+            // 
+            // btnStängDetaljVy
+            // 
+            btnStängDetaljVy.Location = new Point(236, 13);
+            btnStängDetaljVy.Name = "btnStängDetaljVy";
+            btnStängDetaljVy.Size = new Size(94, 29);
+            btnStängDetaljVy.TabIndex = 2;
+            btnStängDetaljVy.Text = "Stäng";
+            btnStängDetaljVy.UseVisualStyleBackColor = true;
+            btnStängDetaljVy.Click += btnStängDetaljVy_Click;
+            // 
             // LedigaAnnonserForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(panelDetaljVy);
+            Controls.Add(btnVisaDetaljer);
             Controls.Add(btnReserveraAnnons);
             Controls.Add(btnAvbryt);
             Controls.Add(dataGridViewLedigaAnnonser);
@@ -147,6 +206,8 @@
             Name = "LedigaAnnonserForm";
             Text = "LedigaAnnonserForm";
             ((System.ComponentModel.ISupportInitialize)dataGridViewLedigaAnnonser).EndInit();
+            panelDetaljVy.ResumeLayout(false);
+            panelDetaljVy.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -163,5 +224,10 @@
         private DataGridViewTextBoxColumn colPris;
         private DataGridViewTextBoxColumn colSkick;
         private DataGridViewTextBoxColumn colTyp;
+        private Button btnVisaDetaljer;
+        private Label lblDetaljVyInformation;
+        private Panel panelDetaljVy;
+        private Label lblDetaljVy;
+        private Button btnStängDetaljVy;
     }
 }

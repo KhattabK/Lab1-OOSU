@@ -18,9 +18,15 @@ namespace Models
             Leveranssätt = leveranssätt;
         }
 
-        public override string SkrivUt()
+        public override string VisaDetaljer()
         {
-            return $"ID {Id}: {Titel} - {Pris} kr - Skick: {Skick} - Kurs: {Kurs.Namn} - Filformat: {Filformat}";
+            return $"Titel: {Titel}\n" +
+                   $"Pris: {Pris} kr\n" +
+                   $"Skick: {Skick}\n" +
+                   $"Kurs: {Kurs.Namn}\n" +
+                   $"Status: {Status}\n" +
+                   $"Filformat: {Filformat}\n" +
+                   $"Leveranssätt: {Leveranssätt}";
         }
     }
 }

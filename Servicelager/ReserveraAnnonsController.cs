@@ -20,7 +20,7 @@ namespace Servicelager
         //Metod som reserverar annonsen genom att anropa Reservera() och skicka med köparen
         // returnerar antingen true eller false, true om reserveringen lyckades och annars false
         //Om reserveringen lyckas skapas en Affär som sparas i Datalager
-        public bool ReserveraAnnons(int annonsId, Student köpare)
+        public bool ReserveraAnnons(int annonsId, Student inloggadStudent)
         {
             //hämtar annonsen med annonsID
             Annons annons = Datalager.HämtaAnnons(annonsId);
@@ -28,11 +28,11 @@ namespace Servicelager
             {
                 return false;
             }
-            bool lyckades = annons.Reservera(köpare);
+            bool lyckades = annons.Reservera(inloggadStudent);
 
             if (lyckades)
             {
-                Affär affär = new Affär(köpare, annons.Säljare, annons, DateTime.Now);
+                Affär affär = new Affär(inloggadStudent, annons.Säljare, annons, DateTime.Now);
                 Datalager.LäggTillAffär(affär);
             }
 

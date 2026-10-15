@@ -10,29 +10,32 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class SkapaAnnons : Form
+    public partial class SkapaAnnonsForm : Form
     {
         private Student InloggadStudent;
         private Datalager datalager;
 
         private SkapaAnnonsController skapaAnnonsController;
 
-        public SkapaAnnons(Datalager datalager, Student inloggadStudent)
+        public SkapaAnnonsForm(Datalager datalager, Student inloggadStudent)
         {
             InitializeComponent();
             this.datalager = datalager;
             this.InloggadStudent = inloggadStudent;
             skapaAnnonsController = new SkapaAnnonsController(datalager);
 
+            //Fyller combobox med  kurserna i datalagret och visar kursnamnen
             cmbKurs.DataSource = datalager.Kurser;
             cmbKurs.DisplayMember = "Namn";
 
+            //Fyller comobox med alla skick från enumen Skick
             cmbAnnonsSkick.DataSource = Enum.GetValues(typeof(Skick));
         }
 
+        //skapar en ny annons
         private void btnSkapaAnnons_Click(object sender, EventArgs e)
         {
-            //Gemensamma uppgifter
+            // Hämtar och validerar annonsens gemensamma uppgifter
             string titel = txtTitelInput.Text; 
             if (string.IsNullOrWhiteSpace(titel))
             {
@@ -49,19 +52,19 @@ namespace GUI
             Skick skick = (Skick)cmbAnnonsSkick.SelectedItem; 
             Kurs kurs = (Kurs)cmbKurs.SelectedItem;
 
-            //kontrollerar så kurs, skick och AnnonsTyp är vald
+            //kontrollerar att annonstyp är vald
             if (cmbAnnonsTyp.SelectedIndex == -1)
             {
                 MessageBox.Show("Välj en annonstyp.");
                 return;
             }
-
+            // kontrollerar att skick är vald
             if (cmbAnnonsSkick.SelectedIndex == -1)
             {
                 MessageBox.Show("Välj skicket på annonsen.");
                 return;
             }
-
+            //kontrollerar att kurs är vald
             if (cmbKurs.SelectedIndex == -1)
             {
                 MessageBox.Show("Välj en kurs.");
@@ -125,13 +128,15 @@ namespace GUI
             this.Close();
         }
 
+        //stänger fönstret utan att skapa en annons. 
         private void btnAvbryt_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
 
-        //Väljer vilken panel som ska visas baserat på vad användaren väljer för alternativ
+        //Paneler avgör vilken annonstyp som visas i botten av fönstret
+        // Styrs här av combobox AnnonsTyp.
         private void cmbAnnonsTyp_SelectedIndexChanged(object sender, EventArgs e)
         {
             panelKursbok.Visible= false;

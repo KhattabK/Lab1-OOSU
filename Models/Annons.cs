@@ -37,10 +37,10 @@ namespace Models
 
         }
 
-        public bool Reservera(Student köpare)
+        public bool Reservera(Student inloggadStudent)
         {
             //kontrollerar att statusen verkligen är TillSalu och returnerar antingen true eller false
-            if(Säljare==köpare)
+            if(Säljare==inloggadStudent)
             {
                 return false;
             }
@@ -67,10 +67,7 @@ namespace Models
             return true;
         }
 
-        public virtual string SkrivUt()
-        {
-            return $"{Titel} - {Pris} kr - Skick: {Skick} ";
-        }
+        public abstract string VisaDetaljer();
 
 
     }

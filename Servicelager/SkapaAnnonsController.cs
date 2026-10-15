@@ -7,7 +7,7 @@ namespace Servicelager
 {
     public class SkapaAnnonsController
     {
-        private readonly Datalager datalager;
+        private Datalager datalager;
 
         public SkapaAnnonsController(Datalager datalager)
         {
