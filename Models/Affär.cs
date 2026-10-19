@@ -23,5 +23,10 @@ namespace Models
         {
             Status = AffärStatus.Genomförd;
         }
+
+        public void Avbryt()
+        {
+            Status = AffärStatus.Avbruten;
+        }
     }
 }
