@@ -33,6 +33,7 @@
             lblNamn = new Label();
             lblLosen = new Label();
             btnInlogg = new Button();
+            btnSkapa = new Button();
             SuspendLayout();
             // 
             // txtNamn
@@ -57,7 +58,6 @@
             lblNamn.Size = new Size(137, 25);
             lblNamn.TabIndex = 2;
             lblNamn.Text = "Användarnamn:";
-            lblNamn.Click += label1_Click;
             // 
             // lblLosen
             // 
@@ -67,7 +67,6 @@
             lblLosen.Size = new Size(90, 25);
             lblLosen.TabIndex = 3;
             lblLosen.Text = "Lösenord:";
-            lblLosen.Click += label2_Click;
             // 
             // btnInlogg
             // 
@@ -79,11 +78,22 @@
             btnInlogg.UseVisualStyleBackColor = true;
             btnInlogg.Click += button1_Click;
             // 
+            // btnSkapa
+            // 
+            btnSkapa.Location = new Point(166, 144);
+            btnSkapa.Name = "btnSkapa";
+            btnSkapa.Size = new Size(128, 34);
+            btnSkapa.TabIndex = 5;
+            btnSkapa.Text = "Skapa konto";
+            btnSkapa.UseVisualStyleBackColor = true;
+            btnSkapa.Click += button2_Click;
+            // 
             // InloggForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(463, 234);
+            Controls.Add(btnSkapa);
             Controls.Add(btnInlogg);
             Controls.Add(lblLosen);
             Controls.Add(lblNamn);
@@ -102,5 +112,6 @@
         private Label lblNamn;
         private Label lblLosen;
         private Button btnInlogg;
+        private Button btnSkapa;
     }
 }
