@@ -34,7 +34,14 @@
             btnLedigaAnnonser = new Button();
             btnVisaStartSida = new Button();
             lblMeny = new Label();
+            panelStartsida = new Panel();
+            lblVälkommen = new Label();
+            lblBookSwapRubrik = new Label();
             panelMinaAnnonser = new Panel();
+            btnBekräftaKöp = new Button();
+            dataGridViewReserveradeAnnonser = new DataGridView();
+            lblAnnonser = new Label();
+            lblSåldaAnnonser = new Label();
             dataGridViewMinaAnnonser = new DataGridView();
             colId = new DataGridViewTextBoxColumn();
             colTitel = new DataGridViewTextBoxColumn();
@@ -43,14 +50,17 @@
             colSkick = new DataGridViewTextBoxColumn();
             colTyp = new DataGridViewTextBoxColumn();
             colStatus = new DataGridViewTextBoxColumn();
-            lblMinaAnnonserRubrik = new Label();
-            panelStartsida = new Panel();
-            lblVälkommen = new Label();
-            lblBookSwapRubrik = new Label();
+            colAnnonsID = new DataGridViewTextBoxColumn();
+            colAnnonsTitel = new DataGridViewTextBoxColumn();
+            colAnnonsPris = new DataGridViewTextBoxColumn();
+            colKöpare = new DataGridViewTextBoxColumn();
+            colAffärStatus = new DataGridViewTextBoxColumn();
+            colReservationsdatum = new DataGridViewTextBoxColumn();
             panelMeny.SuspendLayout();
-            panelMinaAnnonser.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewMinaAnnonser).BeginInit();
             panelStartsida.SuspendLayout();
+            panelMinaAnnonser.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewReserveradeAnnonser).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewMinaAnnonser).BeginInit();
             SuspendLayout();
             // 
             // panelMeny
@@ -63,12 +73,12 @@
             panelMeny.Controls.Add(lblMeny);
             panelMeny.Location = new Point(13, 18);
             panelMeny.Name = "panelMeny";
-            panelMeny.Size = new Size(176, 420);
+            panelMeny.Size = new Size(134, 420);
             panelMeny.TabIndex = 0;
             // 
             // btnMinaAnnonser
             // 
-            btnMinaAnnonser.Location = new Point(22, 247);
+            btnMinaAnnonser.Location = new Point(3, 247);
             btnMinaAnnonser.Name = "btnMinaAnnonser";
             btnMinaAnnonser.Size = new Size(126, 42);
             btnMinaAnnonser.TabIndex = 4;
@@ -78,7 +88,7 @@
             // 
             // btnSkapaAnnons
             // 
-            btnSkapaAnnons.Location = new Point(22, 185);
+            btnSkapaAnnons.Location = new Point(3, 183);
             btnSkapaAnnons.Name = "btnSkapaAnnons";
             btnSkapaAnnons.Size = new Size(126, 42);
             btnSkapaAnnons.TabIndex = 3;
@@ -88,7 +98,7 @@
             // 
             // btnLedigaAnnonser
             // 
-            btnLedigaAnnonser.Location = new Point(22, 124);
+            btnLedigaAnnonser.Location = new Point(3, 124);
             btnLedigaAnnonser.Name = "btnLedigaAnnonser";
             btnLedigaAnnonser.Size = new Size(126, 42);
             btnLedigaAnnonser.TabIndex = 2;
@@ -99,7 +109,7 @@
             // btnVisaStartSida
             // 
             btnVisaStartSida.BackColor = SystemColors.ButtonHighlight;
-            btnVisaStartSida.Location = new Point(22, 66);
+            btnVisaStartSida.Location = new Point(3, 66);
             btnVisaStartSida.Name = "btnVisaStartSida";
             btnVisaStartSida.Size = new Size(126, 42);
             btnVisaStartSida.TabIndex = 1;
@@ -111,90 +121,11 @@
             // 
             lblMeny.AutoSize = true;
             lblMeny.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblMeny.Location = new Point(45, 11);
+            lblMeny.Location = new Point(22, 11);
             lblMeny.Name = "lblMeny";
             lblMeny.Size = new Size(72, 31);
             lblMeny.TabIndex = 0;
             lblMeny.Text = "Meny";
-            // 
-            // panelMinaAnnonser
-            // 
-            panelMinaAnnonser.Controls.Add(dataGridViewMinaAnnonser);
-            panelMinaAnnonser.Controls.Add(lblMinaAnnonserRubrik);
-            panelMinaAnnonser.Location = new Point(193, 18);
-            panelMinaAnnonser.Name = "panelMinaAnnonser";
-            panelMinaAnnonser.Size = new Size(592, 414);
-            panelMinaAnnonser.TabIndex = 2;
-            // 
-            // dataGridViewMinaAnnonser
-            // 
-            dataGridViewMinaAnnonser.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewMinaAnnonser.Columns.AddRange(new DataGridViewColumn[] { colId, colTitel, colKurs, colPris, colSkick, colTyp, colStatus });
-            dataGridViewMinaAnnonser.Location = new Point(3, 52);
-            dataGridViewMinaAnnonser.Name = "dataGridViewMinaAnnonser";
-            dataGridViewMinaAnnonser.RowHeadersWidth = 51;
-            dataGridViewMinaAnnonser.Size = new Size(586, 350);
-            dataGridViewMinaAnnonser.TabIndex = 6;
-            // 
-            // colId
-            // 
-            colId.HeaderText = "ID";
-            colId.MinimumWidth = 6;
-            colId.Name = "colId";
-            colId.Visible = false;
-            colId.Width = 125;
-            // 
-            // colTitel
-            // 
-            colTitel.HeaderText = "Titel";
-            colTitel.MinimumWidth = 6;
-            colTitel.Name = "colTitel";
-            colTitel.Width = 125;
-            // 
-            // colKurs
-            // 
-            colKurs.HeaderText = "Kurs";
-            colKurs.MinimumWidth = 6;
-            colKurs.Name = "colKurs";
-            colKurs.Width = 125;
-            // 
-            // colPris
-            // 
-            colPris.HeaderText = "Pris";
-            colPris.MinimumWidth = 6;
-            colPris.Name = "colPris";
-            colPris.Width = 125;
-            // 
-            // colSkick
-            // 
-            colSkick.HeaderText = "Skick";
-            colSkick.MinimumWidth = 6;
-            colSkick.Name = "colSkick";
-            colSkick.Width = 125;
-            // 
-            // colTyp
-            // 
-            colTyp.HeaderText = "Typ";
-            colTyp.MinimumWidth = 6;
-            colTyp.Name = "colTyp";
-            colTyp.Width = 125;
-            // 
-            // colStatus
-            // 
-            colStatus.HeaderText = "Status";
-            colStatus.MinimumWidth = 6;
-            colStatus.Name = "colStatus";
-            colStatus.Width = 125;
-            // 
-            // lblMinaAnnonserRubrik
-            // 
-            lblMinaAnnonserRubrik.AutoSize = true;
-            lblMinaAnnonserRubrik.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblMinaAnnonserRubrik.Location = new Point(186, 11);
-            lblMinaAnnonserRubrik.Name = "lblMinaAnnonserRubrik";
-            lblMinaAnnonserRubrik.Size = new Size(168, 31);
-            lblMinaAnnonserRubrik.TabIndex = 5;
-            lblMinaAnnonserRubrik.Text = "Mina annonser";
             // 
             // panelStartsida
             // 
@@ -224,23 +155,196 @@
             lblBookSwapRubrik.TabIndex = 5;
             lblBookSwapRubrik.Text = "BookSwap";
             // 
-            // StudentFönster
+            // panelMinaAnnonser
+            // 
+            panelMinaAnnonser.Controls.Add(btnBekräftaKöp);
+            panelMinaAnnonser.Controls.Add(dataGridViewReserveradeAnnonser);
+            panelMinaAnnonser.Controls.Add(lblAnnonser);
+            panelMinaAnnonser.Controls.Add(lblSåldaAnnonser);
+            panelMinaAnnonser.Controls.Add(dataGridViewMinaAnnonser);
+            panelMinaAnnonser.Location = new Point(153, 18);
+            panelMinaAnnonser.Name = "panelMinaAnnonser";
+            panelMinaAnnonser.Size = new Size(629, 414);
+            panelMinaAnnonser.TabIndex = 9;
+            // 
+            // btnBekräftaKöp
+            // 
+            btnBekräftaKöp.Location = new Point(481, 385);
+            btnBekräftaKöp.Name = "btnBekräftaKöp";
+            btnBekräftaKöp.Size = new Size(127, 29);
+            btnBekräftaKöp.TabIndex = 10;
+            btnBekräftaKöp.Text = "Bekräfta köp";
+            btnBekräftaKöp.UseVisualStyleBackColor = true;
+            btnBekräftaKöp.Click += btnBekräftaKöp_Click;
+            // 
+            // dataGridViewReserveradeAnnonser
+            // 
+            dataGridViewReserveradeAnnonser.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridViewReserveradeAnnonser.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewReserveradeAnnonser.Columns.AddRange(new DataGridViewColumn[] { colAnnonsID, colAnnonsTitel, colAnnonsPris, colKöpare, colAffärStatus, colReservationsdatum });
+            dataGridViewReserveradeAnnonser.Location = new Point(3, 272);
+            dataGridViewReserveradeAnnonser.MultiSelect = false;
+            dataGridViewReserveradeAnnonser.Name = "dataGridViewReserveradeAnnonser";
+            dataGridViewReserveradeAnnonser.ReadOnly = true;
+            dataGridViewReserveradeAnnonser.RowHeadersWidth = 51;
+            dataGridViewReserveradeAnnonser.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewReserveradeAnnonser.Size = new Size(623, 99);
+            dataGridViewReserveradeAnnonser.TabIndex = 9;
+            // 
+            // lblAnnonser
+            // 
+            lblAnnonser.AutoSize = true;
+            lblAnnonser.Location = new Point(14, 20);
+            lblAnnonser.Name = "lblAnnonser";
+            lblAnnonser.Size = new Size(110, 20);
+            lblAnnonser.TabIndex = 8;
+            lblAnnonser.Text = "Mina annonser ";
+            // 
+            // lblSåldaAnnonser
+            // 
+            lblSåldaAnnonser.AutoSize = true;
+            lblSåldaAnnonser.Location = new Point(14, 247);
+            lblSåldaAnnonser.Name = "lblSåldaAnnonser";
+            lblSåldaAnnonser.Size = new Size(393, 20);
+            lblSåldaAnnonser.TabIndex = 7;
+            lblSåldaAnnonser.Text = "Sålda annonser - Bekräfta köpet när affären är genomförd";
+            // 
+            // dataGridViewMinaAnnonser
+            // 
+            dataGridViewMinaAnnonser.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewMinaAnnonser.Columns.AddRange(new DataGridViewColumn[] { colId, colTitel, colKurs, colPris, colSkick, colTyp, colStatus });
+            dataGridViewMinaAnnonser.Location = new Point(1, 43);
+            dataGridViewMinaAnnonser.Name = "dataGridViewMinaAnnonser";
+            dataGridViewMinaAnnonser.ReadOnly = true;
+            dataGridViewMinaAnnonser.RowHeadersWidth = 51;
+            dataGridViewMinaAnnonser.SelectionMode = DataGridViewSelectionMode.CellSelect;
+            dataGridViewMinaAnnonser.Size = new Size(625, 189);
+            dataGridViewMinaAnnonser.TabIndex = 6;
+            // 
+            // colId
+            // 
+            colId.HeaderText = "ID";
+            colId.MinimumWidth = 6;
+            colId.Name = "colId";
+            colId.ReadOnly = true;
+            colId.Visible = false;
+            colId.Width = 125;
+            // 
+            // colTitel
+            // 
+            colTitel.HeaderText = "Titel";
+            colTitel.MinimumWidth = 6;
+            colTitel.Name = "colTitel";
+            colTitel.ReadOnly = true;
+            colTitel.Width = 125;
+            // 
+            // colKurs
+            // 
+            colKurs.HeaderText = "Kurs";
+            colKurs.MinimumWidth = 6;
+            colKurs.Name = "colKurs";
+            colKurs.ReadOnly = true;
+            colKurs.Width = 125;
+            // 
+            // colPris
+            // 
+            colPris.HeaderText = "Pris";
+            colPris.MinimumWidth = 6;
+            colPris.Name = "colPris";
+            colPris.ReadOnly = true;
+            colPris.Width = 125;
+            // 
+            // colSkick
+            // 
+            colSkick.HeaderText = "Skick";
+            colSkick.MinimumWidth = 6;
+            colSkick.Name = "colSkick";
+            colSkick.ReadOnly = true;
+            colSkick.Width = 125;
+            // 
+            // colTyp
+            // 
+            colTyp.HeaderText = "Typ";
+            colTyp.MinimumWidth = 6;
+            colTyp.Name = "colTyp";
+            colTyp.ReadOnly = true;
+            colTyp.Width = 125;
+            // 
+            // colStatus
+            // 
+            colStatus.HeaderText = "Status";
+            colStatus.MinimumWidth = 6;
+            colStatus.Name = "colStatus";
+            colStatus.ReadOnly = true;
+            colStatus.Width = 125;
+            // 
+            // colAnnonsID
+            // 
+            colAnnonsID.HeaderText = "ID";
+            colAnnonsID.MinimumWidth = 6;
+            colAnnonsID.Name = "colAnnonsID";
+            colAnnonsID.ReadOnly = true;
+            colAnnonsID.Visible = false;
+            colAnnonsID.Width = 53;
+            // 
+            // colAnnonsTitel
+            // 
+            colAnnonsTitel.HeaderText = "Titel";
+            colAnnonsTitel.MinimumWidth = 6;
+            colAnnonsTitel.Name = "colAnnonsTitel";
+            colAnnonsTitel.ReadOnly = true;
+            colAnnonsTitel.Width = 67;
+            // 
+            // colAnnonsPris
+            // 
+            colAnnonsPris.HeaderText = "Pris";
+            colAnnonsPris.MinimumWidth = 6;
+            colAnnonsPris.Name = "colAnnonsPris";
+            colAnnonsPris.ReadOnly = true;
+            colAnnonsPris.Width = 61;
+            // 
+            // colKöpare
+            // 
+            colKöpare.HeaderText = "Köpare";
+            colKöpare.MinimumWidth = 6;
+            colKöpare.Name = "colKöpare";
+            colKöpare.ReadOnly = true;
+            colKöpare.Width = 86;
+            // 
+            // colAffärStatus
+            // 
+            colAffärStatus.HeaderText = "AffärStatus";
+            colAffärStatus.MinimumWidth = 6;
+            colAffärStatus.Name = "colAffärStatus";
+            colAffärStatus.ReadOnly = true;
+            colAffärStatus.Width = 111;
+            // 
+            // colReservationsdatum
+            // 
+            colReservationsdatum.HeaderText = "Reservationsdatum";
+            colReservationsdatum.MinimumWidth = 6;
+            colReservationsdatum.Name = "colReservationsdatum";
+            colReservationsdatum.ReadOnly = true;
+            colReservationsdatum.Width = 164;
+            // 
+            // StudentsidaForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(panelStartsida);
             Controls.Add(panelMinaAnnonser);
+            Controls.Add(panelStartsida);
             Controls.Add(panelMeny);
-            Name = "StudentFönster";
+            Name = "StudentsidaForm";
             Text = "StudentFönster";
             panelMeny.ResumeLayout(false);
             panelMeny.PerformLayout();
-            panelMinaAnnonser.ResumeLayout(false);
-            panelMinaAnnonser.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewMinaAnnonser).EndInit();
             panelStartsida.ResumeLayout(false);
             panelStartsida.PerformLayout();
+            panelMinaAnnonser.ResumeLayout(false);
+            panelMinaAnnonser.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewReserveradeAnnonser).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewMinaAnnonser).EndInit();
             ResumeLayout(false);
         }
 
@@ -252,9 +356,11 @@
         private Button btnLedigaAnnonser;
         private Button btnVisaStartSida;
         private Label lblMeny;
+        private Panel panelStartsida;
+        private Label lblVälkommen;
+        private Label lblBookSwapRubrik;
         private Panel panelMinaAnnonser;
         private DataGridView dataGridViewMinaAnnonser;
-        private Label lblMinaAnnonserRubrik;
         private DataGridViewTextBoxColumn colId;
         private DataGridViewTextBoxColumn colTitel;
         private DataGridViewTextBoxColumn colKurs;
@@ -262,8 +368,15 @@
         private DataGridViewTextBoxColumn colSkick;
         private DataGridViewTextBoxColumn colTyp;
         private DataGridViewTextBoxColumn colStatus;
-        private Panel panelStartsida;
-        private Label lblVälkommen;
-        private Label lblBookSwapRubrik;
+        private Label lblSåldaAnnonser;
+        private Button btnBekräftaKöp;
+        private DataGridView dataGridViewReserveradeAnnonser;
+        private Label lblAnnonser;
+        private DataGridViewTextBoxColumn colAnnonsID;
+        private DataGridViewTextBoxColumn colAnnonsTitel;
+        private DataGridViewTextBoxColumn colAnnonsPris;
+        private DataGridViewTextBoxColumn colKöpare;
+        private DataGridViewTextBoxColumn colAffärStatus;
+        private DataGridViewTextBoxColumn colReservationsdatum;
     }
 }

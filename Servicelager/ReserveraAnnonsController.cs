@@ -62,5 +62,18 @@ namespace Servicelager
             annonser = Datalager.HämtaAnnonser();
             return annonser;
         }
+
+        //markerar annonsens status som Såld och affärens status som Genomförd
+        public bool BekräftaKöp(Affär affär)
+        {
+            bool lyckades = affär.Annons.BekräftaKöp();
+
+            if (!lyckades)
+            {
+                return false;
+            }
+            affär.Genomför();
+            return true;
+        }
     }
 }

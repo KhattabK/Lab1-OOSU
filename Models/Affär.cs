@@ -4,6 +4,8 @@ namespace Models
 {
     public class Affär
     {
+        private static int nästaId = 1;
+        public int Id { get; private set; }
         public DateTime Reservationsdatum { get; private set; }
         public AffärStatus Status { get; private set; }
         public Student Köpare { get; private set; }
@@ -12,6 +14,7 @@ namespace Models
 
         public Affär(Student köpare, Student säljare, Annons annons, DateTime reservationsdatum)
         {
+            Id = nästaId++;
             Köpare = köpare;
             Säljare = säljare;
             Annons = annons;

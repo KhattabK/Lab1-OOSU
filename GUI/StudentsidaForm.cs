@@ -16,6 +16,7 @@ namespace GUI
         private Student InloggadStudent;
 
         private List<Annons> annonser;
+        private List<Affär> affärer;
         private ReserveraAnnonsController controller;
         public StudentsidaForm() //student och datalager bör skickas med in här
         {
@@ -23,19 +24,23 @@ namespace GUI
             panelStartsida.Visible = true;
             panelMinaAnnonser.Visible = false;
             datalager = new Datalager();
-            InloggadStudent = datalager.Studenter[1]; 
+            InloggadStudent = datalager.Studenter[1];
 
             controller = new ReserveraAnnonsController(datalager);
 
             annonser = controller.HämtaAllaAnnonser();
-            FyllTabell(annonser);
+            FyllTabellAnnonser(annonser);
             dataGridViewMinaAnnonser.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-          
+
+            affärer = datalager.HämtaAffärer();
+            FyllTabellReserveradeAffärer(affärer);
+            dataGridViewReserveradeAnnonser.AutoSizeColumnsMode =DataGridViewAutoSizeColumnsMode.AllCells;
+
         }
 
         //fyller datagrid i "Mina annonser" med data från datalagret där studenten står som säljare
         //kontrollerar också vilken typ av annons det är
-        private void FyllTabell(List<Annons> annonser)
+        private void FyllTabellAnnonser(List<Annons> annonser)
         {
             foreach (Annons annons in annonser)
             {
@@ -71,6 +76,32 @@ namespace GUI
             }
         }
 
+        private void FyllTabellReserveradeAffärer( List<Affär> affärer)
+        {
+            foreach (Affär affär in affärer)
+            {
+                if (affär.Säljare != InloggadStudent)
+                {
+                    continue;
+                }
+                if (affär.Status != AffärStatus.Reserverad)
+                {
+                    continue;
+                }
+
+                dataGridViewReserveradeAnnonser.Rows.Add(
+                        affär.Id,
+                        affär.Annons.Titel,
+                        affär.Annons.Pris,
+                        affär.Köpare.Användarnamn,
+                        affär.Status,
+                        affär.Reservationsdatum
+
+                        );
+                
+            }
+        }
+
         //visar startsidan när Startsida knappen används
         private void btnVisaStartSida_Click(object sender, EventArgs e)
         {
@@ -98,12 +129,61 @@ namespace GUI
         private void btnMinaAnnonser_Click(object sender, EventArgs e)
         {
             dataGridViewMinaAnnonser.Rows.Clear();
+            dataGridViewReserveradeAnnonser.Rows.Clear();
 
             annonser = controller.HämtaAllaAnnonser();
-            FyllTabell(annonser);
+            FyllTabellAnnonser(annonser);
+
+            affärer = datalager.HämtaAffärer();
+            FyllTabellReserveradeAffärer(affärer);
 
             panelStartsida.Visible = false;
             panelMinaAnnonser.Visible = true;
+        }
+
+       
+        //bekräftar köp, alltså markerar en affär som genomförd. 
+        private void btnBekräftaKöp_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewReserveradeAnnonser.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Markera en affär först");
+                return;
+            }
+
+            int affärId = Convert.ToInt32(dataGridViewReserveradeAnnonser.SelectedRows[0].Cells[0].Value);
+
+            foreach (Affär affär in affärer)
+            {
+                if (affär.Id == affärId &&
+                    affär.Säljare == InloggadStudent &&
+                    affär.Status == AffärStatus.Reserverad)
+                {
+                    bool lyckades = controller.BekräftaKöp(affär);
+                    if (lyckades)
+                    {
+                        MessageBox.Show("Köpet har bekräftats!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Köpet kunde inte bekräftas.");
+                    }
+
+                    break;
+                }
+            }
+
+            //fyller båda datagriden med ny relevant data 
+            dataGridViewMinaAnnonser.Rows.Clear();
+            dataGridViewReserveradeAnnonser.Rows.Clear();
+
+            annonser = controller.HämtaAllaAnnonser();
+            FyllTabellAnnonser(annonser);
+
+            affärer = datalager.HämtaAffärer();
+            FyllTabellReserveradeAffärer(affärer);
+
+
         }
     }
 }
