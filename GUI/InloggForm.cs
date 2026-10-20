@@ -12,9 +12,11 @@ namespace GUI
 {
     public partial class InloggForm : Form
     {
+        private Datalager datalager;
         public InloggForm()
         {
             InitializeComponent();
+            datalager = new Datalager();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -38,7 +40,7 @@ namespace GUI
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            regForm regform = new regForm();
+            regForm regform = new regForm(datalager);
             regform.Show();
             this.Hide();
         }

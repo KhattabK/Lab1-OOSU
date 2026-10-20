@@ -143,6 +143,7 @@
             btnReg.TabIndex = 11;
             btnReg.Text = "Registrera";
             btnReg.UseVisualStyleBackColor = true;
+            btnReg.Click += label1_Click;
             // 
             // btnAvbryt
             // 

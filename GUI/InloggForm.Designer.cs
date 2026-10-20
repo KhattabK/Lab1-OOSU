@@ -100,7 +100,7 @@
             Controls.Add(txtLosen);
             Controls.Add(txtNamn);
             Name = "InloggForm";
-            Text = "InloggForm";
+            Text = "Inlogg";
             ResumeLayout(false);
             PerformLayout();
         }
