@@ -23,8 +23,8 @@ namespace GUI
             InitializeComponent();
             this.InloggadStudent = inloggadStudent;
             this.datalager = datalager;
-           
             controller = new ReserveraAnnonsController(datalager);
+            
            
 
             panelStartsida.Visible = true;

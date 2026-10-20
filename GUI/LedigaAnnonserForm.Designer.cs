@@ -41,8 +41,8 @@
             lblDetaljVyInformation = new Label();
             btnVisaDetaljer = new Button();
             panelDetaljVy = new Panel();
-            lblDetaljVy = new Label();
             btnStängDetaljVy = new Button();
+            lblDetaljVy = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridViewLedigaAnnonser).BeginInit();
             panelDetaljVy.SuspendLayout();
             SuspendLayout();
@@ -68,7 +68,7 @@
             dataGridViewLedigaAnnonser.ReadOnly = true;
             dataGridViewLedigaAnnonser.RowHeadersWidth = 51;
             dataGridViewLedigaAnnonser.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewLedigaAnnonser.Size = new Size(776, 332);
+            dataGridViewLedigaAnnonser.Size = new Size(879, 389);
             dataGridViewLedigaAnnonser.TabIndex = 1;
             // 
             // ColId
@@ -123,7 +123,7 @@
             // btnAvbryt
             // 
             btnAvbryt.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnAvbryt.Location = new Point(209, 399);
+            btnAvbryt.Location = new Point(312, 456);
             btnAvbryt.Name = "btnAvbryt";
             btnAvbryt.Size = new Size(94, 41);
             btnAvbryt.TabIndex = 2;
@@ -134,7 +134,7 @@
             // btnReserveraAnnons
             // 
             btnReserveraAnnons.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnReserveraAnnons.Location = new Point(552, 399);
+            btnReserveraAnnons.Location = new Point(655, 456);
             btnReserveraAnnons.Name = "btnReserveraAnnons";
             btnReserveraAnnons.Size = new Size(216, 41);
             btnReserveraAnnons.TabIndex = 3;
@@ -145,16 +145,17 @@
             // lblDetaljVyInformation
             // 
             lblDetaljVyInformation.AutoSize = true;
+            lblDetaljVyInformation.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblDetaljVyInformation.Location = new Point(27, 53);
             lblDetaljVyInformation.Name = "lblDetaljVyInformation";
-            lblDetaljVyInformation.Size = new Size(50, 20);
+            lblDetaljVyInformation.Size = new Size(55, 23);
             lblDetaljVyInformation.TabIndex = 0;
             lblDetaljVyInformation.Text = "label1";
             // 
             // btnVisaDetaljer
             // 
             btnVisaDetaljer.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnVisaDetaljer.Location = new Point(334, 399);
+            btnVisaDetaljer.Location = new Point(437, 456);
             btnVisaDetaljer.Name = "btnVisaDetaljer";
             btnVisaDetaljer.Size = new Size(193, 41);
             btnVisaDetaljer.TabIndex = 5;
@@ -164,13 +165,25 @@
             // 
             // panelDetaljVy
             // 
+            panelDetaljVy.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             panelDetaljVy.Controls.Add(btnStängDetaljVy);
             panelDetaljVy.Controls.Add(lblDetaljVy);
             panelDetaljVy.Controls.Add(lblDetaljVyInformation);
-            panelDetaljVy.Location = new Point(438, 21);
+            panelDetaljVy.Location = new Point(479, 6);
             panelDetaljVy.Name = "panelDetaljVy";
-            panelDetaljVy.Size = new Size(350, 366);
+            panelDetaljVy.Size = new Size(423, 444);
             panelDetaljVy.TabIndex = 6;
+            // 
+            // btnStängDetaljVy
+            // 
+            btnStängDetaljVy.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnStängDetaljVy.Location = new Point(318, 12);
+            btnStängDetaljVy.Name = "btnStängDetaljVy";
+            btnStängDetaljVy.Size = new Size(94, 29);
+            btnStängDetaljVy.TabIndex = 2;
+            btnStängDetaljVy.Text = "Stäng";
+            btnStängDetaljVy.UseVisualStyleBackColor = true;
+            btnStängDetaljVy.Click += btnStängDetaljVy_Click;
             // 
             // lblDetaljVy
             // 
@@ -182,21 +195,11 @@
             lblDetaljVy.TabIndex = 1;
             lblDetaljVy.Text = "Detaljvy";
             // 
-            // btnStängDetaljVy
-            // 
-            btnStängDetaljVy.Location = new Point(236, 13);
-            btnStängDetaljVy.Name = "btnStängDetaljVy";
-            btnStängDetaljVy.Size = new Size(94, 29);
-            btnStängDetaljVy.TabIndex = 2;
-            btnStängDetaljVy.Text = "Stäng";
-            btnStängDetaljVy.UseVisualStyleBackColor = true;
-            btnStängDetaljVy.Click += btnStängDetaljVy_Click;
-            // 
             // LedigaAnnonserForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(903, 507);
             Controls.Add(panelDetaljVy);
             Controls.Add(btnVisaDetaljer);
             Controls.Add(btnReserveraAnnons);

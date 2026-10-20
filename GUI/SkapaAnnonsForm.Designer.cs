@@ -73,7 +73,7 @@
             cmbAnnonsTyp.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbAnnonsTyp.FormattingEnabled = true;
             cmbAnnonsTyp.Items.AddRange(new object[] { "Kursbok", "Kompendium", "Digital resurs" });
-            cmbAnnonsTyp.Location = new Point(15, 40);
+            cmbAnnonsTyp.Location = new Point(135, 71);
             cmbAnnonsTyp.Name = "cmbAnnonsTyp";
             cmbAnnonsTyp.Size = new Size(151, 28);
             cmbAnnonsTyp.TabIndex = 0;
@@ -89,16 +89,14 @@
             panelAnnonsGemensammaUppgifter.Controls.Add(lblAnnonsKurs);
             panelAnnonsGemensammaUppgifter.Controls.Add(txtTitelInput);
             panelAnnonsGemensammaUppgifter.Controls.Add(lblAnnonsTitel);
-            panelAnnonsGemensammaUppgifter.Controls.Add(lblVäljAnnonsTyp);
-            panelAnnonsGemensammaUppgifter.Controls.Add(cmbAnnonsTyp);
-            panelAnnonsGemensammaUppgifter.Location = new Point(8, 52);
+            panelAnnonsGemensammaUppgifter.Location = new Point(8, 111);
             panelAnnonsGemensammaUppgifter.Name = "panelAnnonsGemensammaUppgifter";
-            panelAnnonsGemensammaUppgifter.Size = new Size(780, 224);
+            panelAnnonsGemensammaUppgifter.Size = new Size(625, 209);
             panelAnnonsGemensammaUppgifter.TabIndex = 1;
             // 
             // txtPrisInput
             // 
-            txtPrisInput.Location = new Point(384, 106);
+            txtPrisInput.Location = new Point(72, 132);
             txtPrisInput.Name = "txtPrisInput";
             txtPrisInput.Size = new Size(151, 27);
             txtPrisInput.TabIndex = 15;
@@ -107,7 +105,7 @@
             // 
             cmbAnnonsSkick.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbAnnonsSkick.FormattingEnabled = true;
-            cmbAnnonsSkick.Location = new Point(384, 167);
+            cmbAnnonsSkick.Location = new Point(352, 132);
             cmbAnnonsSkick.Name = "cmbAnnonsSkick";
             cmbAnnonsSkick.Size = new Size(151, 28);
             cmbAnnonsSkick.TabIndex = 14;
@@ -117,7 +115,7 @@
             cmbKurs.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbKurs.FormattingEnabled = true;
             cmbKurs.Items.AddRange(new object[] { "Kursbok", "Kompendium", "Digital resurs" });
-            cmbKurs.Location = new Point(15, 167);
+            cmbKurs.Location = new Point(72, 74);
             cmbKurs.Name = "cmbKurs";
             cmbKurs.Size = new Size(287, 28);
             cmbKurs.TabIndex = 13;
@@ -125,57 +123,60 @@
             // lblAnnonsSkick
             // 
             lblAnnonsSkick.AutoSize = true;
-            lblAnnonsSkick.Location = new Point(384, 144);
+            lblAnnonsSkick.Location = new Point(304, 135);
             lblAnnonsSkick.Name = "lblAnnonsSkick";
-            lblAnnonsSkick.Size = new Size(42, 20);
+            lblAnnonsSkick.Size = new Size(45, 20);
             lblAnnonsSkick.TabIndex = 12;
-            lblAnnonsSkick.Text = "Skick";
+            lblAnnonsSkick.Text = "Skick:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(384, 83);
+            label1.Location = new Point(20, 132);
             label1.Name = "label1";
-            label1.Size = new Size(32, 20);
+            label1.Size = new Size(35, 20);
             label1.TabIndex = 11;
-            label1.Text = "Pris";
+            label1.Text = "Pris:";
             // 
             // lblAnnonsKurs
             // 
             lblAnnonsKurs.AutoSize = true;
-            lblAnnonsKurs.Location = new Point(15, 144);
+            lblAnnonsKurs.Location = new Point(17, 77);
             lblAnnonsKurs.Name = "lblAnnonsKurs";
-            lblAnnonsKurs.Size = new Size(37, 20);
+            lblAnnonsKurs.Size = new Size(40, 20);
             lblAnnonsKurs.TabIndex = 10;
-            lblAnnonsKurs.Text = "Kurs";
+            lblAnnonsKurs.Text = "Kurs:";
             // 
             // txtTitelInput
             // 
-            txtTitelInput.Location = new Point(14, 106);
+            txtTitelInput.Location = new Point(72, 19);
             txtTitelInput.Name = "txtTitelInput";
-            txtTitelInput.Size = new Size(288, 27);
+            txtTitelInput.Size = new Size(424, 27);
             txtTitelInput.TabIndex = 8;
             // 
             // lblAnnonsTitel
             // 
             lblAnnonsTitel.AutoSize = true;
-            lblAnnonsTitel.Location = new Point(14, 83);
+            lblAnnonsTitel.Location = new Point(14, 26);
             lblAnnonsTitel.Name = "lblAnnonsTitel";
-            lblAnnonsTitel.Size = new Size(38, 20);
+            lblAnnonsTitel.Size = new Size(41, 20);
             lblAnnonsTitel.TabIndex = 8;
-            lblAnnonsTitel.Text = "Titel";
+            lblAnnonsTitel.Text = "Titel:";
             // 
             // lblVäljAnnonsTyp
             // 
+            lblVäljAnnonsTyp.AllowDrop = true;
             lblVäljAnnonsTyp.AutoSize = true;
-            lblVäljAnnonsTyp.Location = new Point(15, 17);
+            lblVäljAnnonsTyp.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblVäljAnnonsTyp.Location = new Point(17, 74);
             lblVäljAnnonsTyp.Name = "lblVäljAnnonsTyp";
-            lblVäljAnnonsTyp.Size = new Size(112, 20);
+            lblVäljAnnonsTyp.Size = new Size(118, 20);
             lblVäljAnnonsTyp.TabIndex = 8;
             lblVäljAnnonsTyp.Text = "Välj annonstyp: ";
             // 
             // panelKursbok
             // 
+            panelKursbok.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelKursbok.Controls.Add(lblUpplaga);
             panelKursbok.Controls.Add(lblISBN);
             panelKursbok.Controls.Add(txtFörfattareInput);
@@ -183,15 +184,15 @@
             panelKursbok.Controls.Add(lblKursbok);
             panelKursbok.Controls.Add(txtUpplagaInput);
             panelKursbok.Controls.Add(txtISBNInput);
-            panelKursbok.Location = new Point(8, 282);
+            panelKursbok.Location = new Point(8, 326);
             panelKursbok.Name = "panelKursbok";
-            panelKursbok.Size = new Size(780, 119);
+            panelKursbok.Size = new Size(612, 194);
             panelKursbok.TabIndex = 2;
             // 
             // lblUpplaga
             // 
             lblUpplaga.AutoSize = true;
-            lblUpplaga.Location = new Point(543, 55);
+            lblUpplaga.Location = new Point(14, 129);
             lblUpplaga.Name = "lblUpplaga";
             lblUpplaga.Size = new Size(66, 20);
             lblUpplaga.TabIndex = 7;
@@ -200,7 +201,7 @@
             // lblISBN
             // 
             lblISBN.AutoSize = true;
-            lblISBN.Location = new Point(305, 55);
+            lblISBN.Location = new Point(14, 88);
             lblISBN.Name = "lblISBN";
             lblISBN.Size = new Size(41, 20);
             lblISBN.TabIndex = 6;
@@ -208,7 +209,7 @@
             // 
             // txtFörfattareInput
             // 
-            txtFörfattareInput.Location = new Point(9, 78);
+            txtFörfattareInput.Location = new Point(89, 46);
             txtFörfattareInput.Name = "txtFörfattareInput";
             txtFörfattareInput.Size = new Size(239, 27);
             txtFörfattareInput.TabIndex = 5;
@@ -234,23 +235,24 @@
             // 
             // txtUpplagaInput
             // 
-            txtUpplagaInput.Location = new Point(543, 78);
+            txtUpplagaInput.Location = new Point(89, 128);
             txtUpplagaInput.Name = "txtUpplagaInput";
             txtUpplagaInput.Size = new Size(125, 27);
             txtUpplagaInput.TabIndex = 2;
             // 
             // txtISBNInput
             // 
-            txtISBNInput.Location = new Point(305, 78);
+            txtISBNInput.Location = new Point(87, 85);
             txtISBNInput.Name = "txtISBNInput";
             txtISBNInput.Size = new Size(191, 27);
             txtISBNInput.TabIndex = 1;
             // 
             // btnSkapaAnnons
             // 
-            btnSkapaAnnons.Location = new Point(610, 412);
+            btnSkapaAnnons.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnSkapaAnnons.Location = new Point(442, 529);
             btnSkapaAnnons.Name = "btnSkapaAnnons";
-            btnSkapaAnnons.Size = new Size(178, 31);
+            btnSkapaAnnons.Size = new Size(178, 48);
             btnSkapaAnnons.TabIndex = 16;
             btnSkapaAnnons.Text = "Skapa annons";
             btnSkapaAnnons.UseVisualStyleBackColor = true;
@@ -258,9 +260,10 @@
             // 
             // btnAvbryt
             // 
-            btnAvbryt.Location = new Point(410, 412);
+            btnAvbryt.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnAvbryt.Location = new Point(249, 529);
             btnAvbryt.Name = "btnAvbryt";
-            btnAvbryt.Size = new Size(178, 31);
+            btnAvbryt.Size = new Size(178, 48);
             btnAvbryt.TabIndex = 17;
             btnAvbryt.Text = "Avbryt";
             btnAvbryt.UseVisualStyleBackColor = true;
@@ -268,19 +271,20 @@
             // 
             // panelKompendium
             // 
+            panelKompendium.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelKompendium.Controls.Add(txtUtgivningsår);
             panelKompendium.Controls.Add(lblUtgivningsår);
             panelKompendium.Controls.Add(txtAntalSidor);
             panelKompendium.Controls.Add(lblAntalSidor);
             panelKompendium.Controls.Add(lblKompendium);
-            panelKompendium.Location = new Point(10, 282);
+            panelKompendium.Location = new Point(10, 326);
             panelKompendium.Name = "panelKompendium";
-            panelKompendium.Size = new Size(780, 116);
+            panelKompendium.Size = new Size(610, 197);
             panelKompendium.TabIndex = 18;
             // 
             // txtUtgivningsår
             // 
-            txtUtgivningsår.Location = new Point(305, 59);
+            txtUtgivningsår.Location = new Point(125, 102);
             txtUtgivningsår.Name = "txtUtgivningsår";
             txtUtgivningsår.Size = new Size(151, 27);
             txtUtgivningsår.TabIndex = 16;
@@ -288,15 +292,15 @@
             // lblUtgivningsår
             // 
             lblUtgivningsår.AutoSize = true;
-            lblUtgivningsår.Location = new Point(305, 36);
+            lblUtgivningsår.Location = new Point(15, 105);
             lblUtgivningsår.Name = "lblUtgivningsår";
-            lblUtgivningsår.Size = new Size(92, 20);
+            lblUtgivningsår.Size = new Size(95, 20);
             lblUtgivningsår.TabIndex = 16;
-            lblUtgivningsår.Text = "Utgivningsår";
+            lblUtgivningsår.Text = "Utgivningsår:";
             // 
             // txtAntalSidor
             // 
-            txtAntalSidor.Location = new Point(15, 59);
+            txtAntalSidor.Location = new Point(125, 59);
             txtAntalSidor.Name = "txtAntalSidor";
             txtAntalSidor.Size = new Size(151, 27);
             txtAntalSidor.TabIndex = 16;
@@ -304,17 +308,17 @@
             // lblAntalSidor
             // 
             lblAntalSidor.AutoSize = true;
-            lblAntalSidor.Location = new Point(15, 36);
+            lblAntalSidor.Location = new Point(15, 66);
             lblAntalSidor.Name = "lblAntalSidor";
-            lblAntalSidor.Size = new Size(81, 20);
+            lblAntalSidor.Size = new Size(84, 20);
             lblAntalSidor.TabIndex = 16;
-            lblAntalSidor.Text = "Antal sidor";
+            lblAntalSidor.Text = "Antal sidor:";
             // 
             // lblKompendium
             // 
             lblKompendium.AutoSize = true;
             lblKompendium.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblKompendium.Location = new Point(4, 0);
+            lblKompendium.Location = new Point(12, 21);
             lblKompendium.Name = "lblKompendium";
             lblKompendium.Size = new Size(125, 25);
             lblKompendium.TabIndex = 16;
@@ -322,26 +326,27 @@
             // 
             // panelDigitalResurs
             // 
+            panelDigitalResurs.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelDigitalResurs.Controls.Add(txtLeveranssätt);
             panelDigitalResurs.Controls.Add(txtFilformatInput);
             panelDigitalResurs.Controls.Add(lblLeveranssätt);
             panelDigitalResurs.Controls.Add(lblFilformat);
             panelDigitalResurs.Controls.Add(lblDigitalResurs);
-            panelDigitalResurs.Location = new Point(11, 285);
+            panelDigitalResurs.Location = new Point(11, 326);
             panelDigitalResurs.Name = "panelDigitalResurs";
-            panelDigitalResurs.Size = new Size(779, 121);
+            panelDigitalResurs.Size = new Size(622, 197);
             panelDigitalResurs.TabIndex = 19;
             // 
             // txtLeveranssätt
             // 
-            txtLeveranssätt.Location = new Point(280, 59);
+            txtLeveranssätt.Location = new Point(113, 96);
             txtLeveranssätt.Name = "txtLeveranssätt";
             txtLeveranssätt.Size = new Size(268, 27);
             txtLeveranssätt.TabIndex = 17;
             // 
             // txtFilformatInput
             // 
-            txtFilformatInput.Location = new Point(14, 59);
+            txtFilformatInput.Location = new Point(101, 49);
             txtFilformatInput.Name = "txtFilformatInput";
             txtFilformatInput.Size = new Size(178, 27);
             txtFilformatInput.TabIndex = 16;
@@ -349,26 +354,26 @@
             // lblLeveranssätt
             // 
             lblLeveranssätt.AutoSize = true;
-            lblLeveranssätt.Location = new Point(279, 35);
+            lblLeveranssätt.Location = new Point(17, 99);
             lblLeveranssätt.Name = "lblLeveranssätt";
-            lblLeveranssätt.Size = new Size(90, 20);
+            lblLeveranssätt.Size = new Size(93, 20);
             lblLeveranssätt.TabIndex = 16;
-            lblLeveranssätt.Text = "Leveranssätt";
+            lblLeveranssätt.Text = "Leveranssätt:";
             // 
             // lblFilformat
             // 
             lblFilformat.AutoSize = true;
-            lblFilformat.Location = new Point(12, 36);
+            lblFilformat.Location = new Point(17, 55);
             lblFilformat.Name = "lblFilformat";
-            lblFilformat.Size = new Size(69, 20);
+            lblFilformat.Size = new Size(72, 20);
             lblFilformat.TabIndex = 16;
-            lblFilformat.Text = "Filformat";
+            lblFilformat.Text = "Filformat:";
             // 
             // lblDigitalResurs
             // 
             lblDigitalResurs.AutoSize = true;
             lblDigitalResurs.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblDigitalResurs.Location = new Point(6, 0);
+            lblDigitalResurs.Location = new Point(11, 11);
             lblDigitalResurs.Name = "lblDigitalResurs";
             lblDigitalResurs.Size = new Size(123, 25);
             lblDigitalResurs.TabIndex = 16;
@@ -378,17 +383,17 @@
             // 
             lblSkapaAnnonsRubrik.AutoSize = true;
             lblSkapaAnnonsRubrik.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblSkapaAnnonsRubrik.Location = new Point(291, 9);
+            lblSkapaAnnonsRubrik.Location = new Point(249, 9);
             lblSkapaAnnonsRubrik.Name = "lblSkapaAnnonsRubrik";
             lblSkapaAnnonsRubrik.Size = new Size(158, 31);
             lblSkapaAnnonsRubrik.TabIndex = 16;
             lblSkapaAnnonsRubrik.Text = "Skapa annons";
             // 
-            // SkapaAnnons
+            // SkapaAnnonsForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(645, 589);
             Controls.Add(lblSkapaAnnonsRubrik);
             Controls.Add(panelDigitalResurs);
             Controls.Add(panelKompendium);
@@ -396,7 +401,9 @@
             Controls.Add(btnSkapaAnnons);
             Controls.Add(panelKursbok);
             Controls.Add(panelAnnonsGemensammaUppgifter);
-            Name = "SkapaAnnons";
+            Controls.Add(lblVäljAnnonsTyp);
+            Controls.Add(cmbAnnonsTyp);
+            Name = "SkapaAnnonsForm";
             Text = "SkapaAnnons";
             panelAnnonsGemensammaUppgifter.ResumeLayout(false);
             panelAnnonsGemensammaUppgifter.PerformLayout();

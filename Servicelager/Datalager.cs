@@ -47,6 +47,7 @@ namespace Servicelager
             Kurser.Add(kurs1);
             Kurser.Add(kurs2);
             Kurser.Add(kurs3);
+            Kurser.Add(kurs4);
 
 
             // Exempeldata: annonser
