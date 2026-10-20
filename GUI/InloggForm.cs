@@ -30,8 +30,16 @@ namespace GUI
 
             if (användare is Student)
             {
-                MessageBox.Show("Inloggning lyckades!");
-                
+                StudentForm studentForm = new StudentForm();
+                studentForm.Show();
+                this.Hide();
+            }
+
+            else if (användare is Administratör)
+            {
+                AdminForm adminForm = new AdminForm();
+                adminForm.show();
+                this.Hide();
             }
             else
             {
