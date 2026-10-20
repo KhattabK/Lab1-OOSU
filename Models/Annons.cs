@@ -33,7 +33,7 @@ namespace Models
             Status = status;
             Säljare = säljare;
             Kurs = kurs;
-            säljare.LäggTillAnnons(this);
+            
 
         }
 

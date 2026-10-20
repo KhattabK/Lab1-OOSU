@@ -18,15 +18,19 @@ namespace GUI
         private List<Annons> annonser;
         private List<Affär> affärer;
         private ReserveraAnnonsController controller;
-        public StudentsidaForm() //student och datalager bör skickas med in här
+        public StudentsidaForm(Datalager datalager, Student inloggadStudent) 
         {
             InitializeComponent();
+            this.InloggadStudent = inloggadStudent;
+            this.datalager = datalager;
+           
+            controller = new ReserveraAnnonsController(datalager);
+           
+
             panelStartsida.Visible = true;
             panelMinaAnnonser.Visible = false;
-            datalager = new Datalager();
-            InloggadStudent = datalager.Studenter[1];
 
-            controller = new ReserveraAnnonsController(datalager);
+            lblVälkommen.Text = InloggadStudent.Presentera();
 
             annonser = controller.HämtaAllaAnnonser();
             FyllTabellAnnonser(annonser);
@@ -34,7 +38,7 @@ namespace GUI
 
             affärer = datalager.HämtaAffärer();
             FyllTabellReserveradeAffärer(affärer);
-            dataGridViewReserveradeAnnonser.AutoSizeColumnsMode =DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridViewReserveradeAnnonser.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
         }
 
@@ -76,7 +80,7 @@ namespace GUI
             }
         }
 
-        private void FyllTabellReserveradeAffärer( List<Affär> affärer)
+        private void FyllTabellReserveradeAffärer(List<Affär> affärer)
         {
             foreach (Affär affär in affärer)
             {
@@ -98,7 +102,7 @@ namespace GUI
                         affär.Reservationsdatum
 
                         );
-                
+
             }
         }
 
@@ -141,7 +145,7 @@ namespace GUI
             panelMinaAnnonser.Visible = true;
         }
 
-       
+
         //bekräftar köp, alltså markerar en affär som genomförd. 
         private void btnBekräftaKöp_Click(object sender, EventArgs e)
         {
@@ -184,6 +188,11 @@ namespace GUI
             FyllTabellReserveradeAffärer(affärer);
 
 
+        }
+
+        private void btnLoggaUt_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

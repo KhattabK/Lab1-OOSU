@@ -252,11 +252,11 @@ namespace Servicelager
             Annonser.Add(annons);
         }
 
-        // Tar bort en annons, både från Annonser-listan och från säljarens egna annonser
+        // Tar bort en annons, både från Annonser-listan 
         public void TaBortAnnons(Annons annons)
         {
             Annonser.Remove(annons);
-            annons.Säljare.TaBortAnnons(annons);
+            
         }
 
         //hämtar en annons enligt annonsID
