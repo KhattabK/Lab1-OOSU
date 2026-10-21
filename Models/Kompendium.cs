@@ -18,9 +18,15 @@ namespace Models
             AntalSidor = antalSidor;
             UtgivningsÅr = utgivningsÅr;
         }
-        public override string SkrivUt()
+        public override string VisaDetaljer()
         {
-            return $"ID {Id}: {Titel} - {Pris} kr - Skick: {Skick}  - Antal sidor: {AntalSidor}";
+            return $"Titel: {Titel}\n" +
+                   $"Pris: {Pris} kr\n" +
+                   $"Skick: {Skick}\n" +
+                   $"Kurs: {Kurs.Namn}\n" +
+                   $"Status: {Status}\n" +
+                   $"Antal sidor: {AntalSidor}\n" +
+                   $"Utgivningsår: {UtgivningsÅr}";
         }
     }
 }

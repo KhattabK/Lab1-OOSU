@@ -19,9 +19,16 @@ namespace Models
             Upplaga = upplaga;
         }
 
-        public override string SkrivUt()
+        public override string VisaDetaljer()
         {
-            return $"ID {Id}: {Titel} - {Pris} kr - Skick: {Skick} Kurs: {Kurs.Namn} - Författare: {Författare}";
+            return $"Titel: {Titel}\n" +
+                   $"Pris: {Pris} kr\n" +
+                   $"Skick: {Skick}\n" +
+                   $"Kurs: {Kurs.Namn}\n" +
+                   $"Status: {Status}\n" +
+                   $"ISBN: {ISBN}\n" +
+                   $"Författare: {Författare}\n"+
+                   $"Upplaga: {Upplaga}";
         }
     }
 }
