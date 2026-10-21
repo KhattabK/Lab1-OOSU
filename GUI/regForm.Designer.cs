@@ -153,6 +153,7 @@
             btnAvbryt.TabIndex = 12;
             btnAvbryt.Text = "Avbryt";
             btnAvbryt.UseVisualStyleBackColor = true;
+            btnAvbryt.Click += btnAvbryt_Click;
             // 
             // lblEfternamn
             // 

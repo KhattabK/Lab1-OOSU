@@ -28,17 +28,17 @@ namespace GUI
                 txtNamn.Text,
                 txtLosen.Text);
 
-            if (användare is Student)
+            if (användare is Student student)
             {
-                StudentForm studentForm = new StudentForm();
-                studentForm.Show();
+                StudentsidaForm studentsidaForm = new StudentsidaForm(datalager, student);
+                studentsidaForm.Show();
                 this.Hide();
             }
 
-            else if (användare is Administratör)
+            else if (användare is Administratör administratör)
             {
-                AdminForm adminForm = new AdminForm();
-                adminForm.show();
+                AdminForm adminForm = new AdminForm(datalager, administratör);
+                adminForm.Show();
                 this.Hide();
             }
             else
@@ -50,7 +50,7 @@ namespace GUI
         {
             regForm regform = new regForm(datalager);
             regform.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

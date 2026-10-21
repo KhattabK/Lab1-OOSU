@@ -40,7 +40,14 @@ namespace GUI
             }
             else
             {
-                MessageBox.Show("Något fält är tomt eller är användarnamnet upptaget.");            }
+                MessageBox.Show("Något fält är tomt eller är användarnamnet upptaget.");            
+            }
+        }
+        private void btnAvbryt_Click(object sender, EventArgs e)
+        {
+            InloggForm inloggForm = new InloggForm();
+            inloggForm.Show();
+            this.Close();
         }
 
         private void label3_Click(object sender, EventArgs e)
