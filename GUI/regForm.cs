@@ -35,22 +35,21 @@ namespace GUI
                 );
             if (student != null)
             {
+                InloggForm inloggForm = new InloggForm();
                 MessageBox.Show("Kontot är skapat!");
                 this.Close();
+                inloggForm.Show();
             }
             else
             {
-                MessageBox.Show("Något fält är tomt eller är användarnamnet upptaget.");            }
+                MessageBox.Show("Något fält är tomt eller är användarnamnet upptaget.");
+            }
         }
-
-        private void label3_Click(object sender, EventArgs e)
+        private void btnAvbryt_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
+            InloggForm inloggForm = new InloggForm();
+            this.Close();
+            inloggForm.Show();
         }
     }
 }
