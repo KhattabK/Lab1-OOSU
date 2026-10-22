@@ -53,7 +53,6 @@
             lblAnvandare.Size = new Size(101, 25);
             lblAnvandare.TabIndex = 0;
             lblAnvandare.Text = "Användare:";
-            lblAnvandare.Click += label1_Click;
             // 
             // txtAnvandare
             // 
@@ -79,7 +78,6 @@
             lblFornamn.Size = new Size(87, 25);
             lblFornamn.TabIndex = 3;
             lblFornamn.Text = "Förnamn:";
-            lblFornamn.Click += label3_Click;
             // 
             // lblEpost
             // 
@@ -163,7 +161,6 @@
             lblEfternamn.Size = new Size(97, 25);
             lblEfternamn.TabIndex = 13;
             lblEfternamn.Text = "Efternamn:";
-            lblEfternamn.Click += label1_Click_1;
             // 
             // txtEfternamn
             // 

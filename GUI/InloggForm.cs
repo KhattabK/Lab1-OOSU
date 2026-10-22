@@ -21,7 +21,6 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Datalager datalager = new Datalager();
             InloggningController controller = new InloggningController(datalager);
 
             Användare? användare = controller.LoggaIn(
@@ -49,8 +48,9 @@ namespace GUI
         private void button2_Click(object sender, EventArgs e)
         {
             regForm regform = new regForm(datalager);
+            this.Hide();
             regform.Show();
-            this.Close();
+            
         }
     }
 }
