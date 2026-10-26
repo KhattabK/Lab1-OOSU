@@ -6,7 +6,7 @@ namespace Models
 {
     public class Kurs
     {
-        //public för att kunna används av SkrivUt()
+        //public get så att andra klasser kan läsa kod och namn, private set så att de bara ändras via Ändra()
         public string Kod { get; private set; }
         public string Namn { get; private set; }
 
