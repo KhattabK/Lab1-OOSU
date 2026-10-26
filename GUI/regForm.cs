@@ -35,10 +35,8 @@ namespace GUI
                 );
             if (student != null)
             {
-                InloggForm inloggForm = new InloggForm();
                 MessageBox.Show("Kontot är skapat!");
                 this.Close();
-                inloggForm.Show();
             }
             else
             {
@@ -47,9 +45,7 @@ namespace GUI
         }
         private void btnAvbryt_Click(object sender, EventArgs e)
         {
-            InloggForm inloggForm = new InloggForm();
             this.Close();
-            inloggForm.Show();
         }
     }
 }

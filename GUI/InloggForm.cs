@@ -49,7 +49,8 @@ namespace GUI
         {
             regForm regform = new regForm(datalager);
             this.Hide();
-            regform.Show();
+            regform.ShowDialog();
+            this.Show();
             
         }
     }
