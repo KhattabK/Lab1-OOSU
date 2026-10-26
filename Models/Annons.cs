@@ -9,14 +9,14 @@ namespace Models
     {
         private static int nästaId = 1;
         public int Id { get; private set; }
-        //de har satts till protected för att kunna användas av SkrivUt() i subklasserna
+        //public get så att andra klasser kan läsa dem, private set så att de bara kan ändras inne i klassen
         public string Titel { get; private set; }
         public decimal Pris { get; private set; }
 
         public Skick Skick { get; private set; }
         public Kurs Kurs { get; private set; }
 
-        //private för att de ej är nödvändiga i SkrivUt()
+        //private eftersom publiceringsdatumet bara används inne i klassen
         private DateTime Publiceringsdatum;
         public Student Säljare { get; private set; }
 
