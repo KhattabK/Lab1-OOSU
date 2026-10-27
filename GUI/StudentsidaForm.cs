@@ -36,7 +36,7 @@ namespace GUI
             FyllTabellAnnonser(annonser);
             dataGridViewMinaAnnonser.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
-            affärer = datalager.HämtaAffärer();
+            affärer = controller.HämtaAllaAffärer();
             FyllTabellReserveradeAffärer(affärer);
             dataGridViewReserveradeAnnonser.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
@@ -138,7 +138,7 @@ namespace GUI
             annonser = controller.HämtaAllaAnnonser();
             FyllTabellAnnonser(annonser);
 
-            affärer = datalager.HämtaAffärer();
+            affärer = controller.HämtaAllaAffärer();
             FyllTabellReserveradeAffärer(affärer);
 
             panelStartsida.Visible = false;

@@ -75,5 +75,12 @@ namespace Servicelager
             affär.Genomför();
             return true;
         }
+
+        public List<Affär> HämtaAllaAffärer()
+        {
+            List<Affär> affärer = new List<Affär>();
+            affärer = Datalager.HämtaAffärer();
+            return affärer;
+        }
     }
 }
