@@ -21,24 +21,23 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Datalager datalager = new Datalager();
             InloggningController controller = new InloggningController(datalager);
 
             Användare? användare = controller.LoggaIn(
                 txtNamn.Text,
                 txtLosen.Text);
 
-            if (användare is Student)
+            if (användare is Student student)
             {
-                StudentForm studentForm = new StudentForm();
-                studentForm.Show();
+                StudentsidaForm studentsidaForm = new StudentsidaForm(datalager, student);
+                studentsidaForm.Show();
                 this.Hide();
             }
 
-            else if (användare is Administratör)
+            else if (användare is Administratör administratör)
             {
-                AdminForm adminForm = new AdminForm();
-                adminForm.show();
+                AdminForm adminForm = new AdminForm(datalager, administratör);
+                adminForm.Show();
                 this.Hide();
             }
             else
@@ -49,8 +48,10 @@ namespace GUI
         private void button2_Click(object sender, EventArgs e)
         {
             regForm regform = new regForm(datalager);
-            regform.Show();
             this.Hide();
+            regform.ShowDialog();
+            this.Show();
+            
         }
     }
 }
