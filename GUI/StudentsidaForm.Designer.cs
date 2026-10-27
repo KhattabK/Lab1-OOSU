@@ -162,6 +162,7 @@
             btnBekräftaKöp.TabIndex = 10;
             btnBekräftaKöp.Text = "Bekräfta köp";
             btnBekräftaKöp.UseVisualStyleBackColor = true;
+            btnBekräftaKöp.Click += btnBekräftaKöp_Click;
             // 
             // dataGridViewReserveradeAnnonser
             // 

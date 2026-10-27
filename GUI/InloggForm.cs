@@ -30,15 +30,19 @@ namespace GUI
             if (användare is Student student)
             {
                 StudentsidaForm studentsidaForm = new StudentsidaForm(datalager, student);
-                studentsidaForm.Show();
                 this.Hide();
+                studentsidaForm.ShowDialog();
+                txtLosen.Text = "";
+                this.Show();
             }
 
             else if (användare is Administratör administratör)
             {
                 AdminForm adminForm = new AdminForm(datalager, administratör);
-                adminForm.Show();
                 this.Hide();
+                adminForm.ShowDialog();
+                txtLosen.Text = "";
+                this.Show();
             }
             else
             {
